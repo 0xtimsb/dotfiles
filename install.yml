@@ -41,8 +41,9 @@
 
         - name: Add VSCode repository
           ansible.builtin.apt_repository:
-            repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main
+            repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main
             filename: vscode
+            state: present
 
         # Spotify
         - name: Add Spotify GPG key
