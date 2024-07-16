@@ -1,0 +1,24 @@
+packages_to_install:
+  - build-essential
+  - curl
+  - ffmpeg
+  - firefox
+  - fzf
+  - vlc
+  - neovim
+  - fish
+  - kitty
+  - sway
+  - swaylock
+  - swayidle
+  - swaybg
+  - stow
+  - mako
+  - wl-clipboard
+  - fish
+  - syncthing
+  - transmission-gtk
+  - code
+  - mongodb-compass
+  - spotify-client
+  - slack-desktop

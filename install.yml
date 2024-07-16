@@ -1,0 +1,98 @@
+- name: Install Debian, Flatpak packages.
+  hosts: localhost
+  vars_files:
+    - packages.yml
+  tasks:
+    - name: Add repositories
+      become: true
+      block:
+        # - name: Add the Flathub repository
+        #   community.general.flatpak_remote:
+        #     name: flathub
+        #     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+        # Firefox
+        - name: Download Mozilla's GPG key
+          ansible.builtin.get_url:
+            url: https://packages.mozilla.org/apt/repo-signing-key.gpg
+            dest: /etc/apt/keyrings/packages.mozilla.org.asc
+            mode: "0644"
+
+        - name: Add Mozilla apt repository
+          ansible.builtin.apt_repository:
+            repo: deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+            filename: mozilla
+
+        - name: Set pin preference for Mozilla packages
+          ansible.builtin.copy:
+            dest: /etc/apt/preferences.d/mozilla
+            content: |
+              Package: *
+              Pin: origin packages.mozilla.org
+              Pin-Priority: 1000
+            mode: "0644"
+
+        # VSCode
+        - name: Download VSCode GPG key
+          ansible.builtin.get_url:
+            url: https://packages.microsoft.com/keys/microsoft.asc
+            dest: /etc/apt/keyrings/packages.microsoft.gpg
+            mode: "0644"
+
+        - name: Add VSCode repository
+          ansible.builtin.apt_repository:
+            repo: deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main
+            filename: vscode
+
+        # Spotify
+        - name: Add Spotify GPG key
+          ansible.builtin.apt_key:
+            url: https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg
+            keyring: /etc/apt/trusted.gpg.d/spotify.gpg
+            state: present
+
+        - name: Add Spotify repository
+          ansible.builtin.apt_repository:
+            repo: deb http://repository.spotify.com stable non-free
+            filename: spotify
+            state: present
+
+        # MongoDB
+        - name: Download MongoDB GPG key
+          ansible.builtin.get_url:
+            url: https://www.mongodb.org/static/pgp/server-5.0.asc
+            dest: /etc/apt/keyrings/mongodb-5.0.asc
+            mode: "0644"
+
+        - name: Add MongoDB repository
+          ansible.builtin.apt_repository:
+            repo: deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+            filename: mongodb-org-5.0
+
+        # Slack
+        - name: Download Slack GPG key
+          ansible.builtin.get_url:
+            url: https://slack.com/gpg/slack-desktop-public-key.gpg
+            dest: /usr/share/keyrings/slack-desktop-keyring.gpg
+            mode: "0644"
+
+        - name: Add Slack apt repository
+          ansible.builtin.apt_repository:
+            repo: deb [signed-by=/usr/share/keyrings/slack-desktop-keyring.gpg] https://packagecloud.io/slacktechnologies/slack/debian/ bullseye main
+            filename: slack
+
+    - name: Install Packages from repositories
+      become: true
+      block:
+        - name: Update and upgrade all Debian packages
+          ansible.builtin.apt:
+            upgrade: dist
+            update_cache: true
+
+        - name: Install Debian packages
+          ansible.builtin.apt:
+            name: "{{ packages_to_install }}"
+
+        # - name: Install Flatpak packages
+        #   community.general.flatpak:
+        #     name: "{{ flatpak_packages }}"
