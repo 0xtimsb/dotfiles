@@ -20,7 +20,7 @@ cd dotfiles
 4. make everything executable
 
 ```
-chmod +x *.sh
+chmod +x **/*.sh
 ```
 
 5. nuke!
