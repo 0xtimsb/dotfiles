@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Run system update
-./update_system.sh
+./update.sh
 
 # Install packages
-./install_packages.sh
+./packages.sh
 
 # Install apps
 ./apps/vscode.sh
