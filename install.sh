@@ -7,6 +7,8 @@
 # Install tools
 ./tools/fish.sh
 ./tools/nvm.sh
+./tools/pnpm.sh
+./tools/bun.sh
 
 # Install apps
 ./apps/vscode.sh
