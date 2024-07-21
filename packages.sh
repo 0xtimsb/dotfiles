@@ -14,7 +14,6 @@ packages=(
     swayidle
     swaybg
     stow
-    mako
     wl-clipboard
     syncthing
     transmission-gtk
