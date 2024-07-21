@@ -11,6 +11,7 @@
 ./apps/spotify.sh
 ./apps/slack.sh
 ./apps/firefox.sh
+./apps/mongo.sh
 
 echo "All installations complete!"
 
