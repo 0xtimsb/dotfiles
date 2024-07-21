@@ -1,3 +1,7 @@
 ```
-ansible-playbook main.yml
+chmod +x *.sh
+```
+
+```
+./install.sh
 ```
