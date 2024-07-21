@@ -17,13 +17,7 @@ git clone https://github.com/0xtimsb/dotfiles.git
 cd dotfiles
 ```
 
-4. make everything executable
-
-```
-chmod +x **/*.sh
-```
-
-5. nuke!
+4. nuke!
 
 ```
 ./install.sh
