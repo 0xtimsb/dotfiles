@@ -7,7 +7,6 @@ packages=(
     fzf
     vlc
     neovim
-    fish
     kitty
     sway
     swaylock

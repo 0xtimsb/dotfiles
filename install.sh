@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Run system update
-./helper/update.sh
-
 # Install packages
+./helper/update.sh
 ./helper/packages.sh
+
+# Install tools
+./tools/fish.sh
+./tools/nvm.sh
 
 # Install apps
 ./apps/vscode.sh
