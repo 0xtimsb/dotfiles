@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if ! command -v spotify &> /dev/null; then
-    echo "Installing Spotify..."
-    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-    sudo apt-get update && sudo apt-get install spotify-client -y
-    echo "Spotify installed successfully."
+if ! command -v slack &> /dev/null; then
+    echo "Installing Slack..."
+    wget https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb
+    sudo apt install ./slack-desktop-*.deb -y
+    rm slack-desktop-*.deb
+    echo "Slack installed successfully."
 else
-    echo "Spotify is already installed."
+    echo "Slack is already installed."
 fi

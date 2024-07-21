@@ -1,6 +1,7 @@
 #!/bin/bash
 
 packages=(
+    xwayland
     build-essential
     curl
     ffmpeg
@@ -12,8 +13,9 @@ packages=(
     swaylock
     swayidle
     swaybg
-    stow
+    wofi
     wl-clipboard
+    stow
     syncthing
     transmission-gtk
 )
