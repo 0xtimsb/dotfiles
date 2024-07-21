@@ -1,0 +1,28 @@
+- name: Install all applications
+  hosts: localhost
+  become: yes
+  vars_files:
+    - packages.yml
+
+  tasks:
+    - name: Update and upgrade all Debian packages
+      apt:
+        upgrade: dist
+        update_cache: yes
+
+    - name: Install packages from official repositories
+      apt:
+        name: "{{ packages_to_install }}"
+        state: present
+
+    - name: Install VSCode
+      include_tasks: ./apps/vscode.yml
+
+    - name: Install Spotify
+      include_tasks: ./apps/spotify.yml
+
+    - name: Install Slack
+      include_tasks: ./apps/slack.yml
+
+    - name: Install Firefox
+      include_tasks: ./apps/firefox.yml

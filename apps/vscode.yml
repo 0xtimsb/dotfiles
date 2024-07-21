@@ -1,0 +1,32 @@
+- name: Install prerequisites
+  apt:
+    name:
+      - wget
+      - gpg
+      - apt-transport-https
+    state: present
+
+- name: Download Microsoft GPG key
+  get_url:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    dest: /tmp/microsoft.asc
+
+- name: Add Microsoft GPG key
+  apt_key:
+    file: /tmp/microsoft.asc
+    state: present
+
+- name: Add VSCode repository
+  apt_repository:
+    repo: deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main
+    state: present
+    filename: vscode
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install VSCode
+  apt:
+    name: code
+    state: present

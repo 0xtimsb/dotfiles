@@ -1,0 +1,33 @@
+- name: Create directory for APT keys
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: "0755"
+
+- name: Download Mozilla GPG key
+  get_url:
+    url: https://packages.mozilla.org/apt/repo-signing-key.gpg
+    dest: /etc/apt/keyrings/packages.mozilla.org.asc
+
+- name: Add Mozilla repository
+  apt_repository:
+    repo: deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+    state: present
+    filename: mozilla
+
+- name: Set Mozilla repository priority
+  copy:
+    content: |
+      Package: *
+      Pin: origin packages.mozilla.org
+      Pin-Priority: 1000
+    dest: /etc/apt/preferences.d/mozilla
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Firefox
+  apt:
+    name: firefox
+    state: present
