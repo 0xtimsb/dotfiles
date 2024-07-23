@@ -174,7 +174,7 @@ mount "$ESP" /mnt/boot/
 
 # install base system packages
 echo "installing base system"
-pacstrap -K /mnt base "$KERNEL" "$MICROCODE" linux-firmware "$KERNEL"-headers sbctl btrfs-progs grub grub-btrfs rsync efibootmgr snapper reflector snap-pac zram-generator sudo &>/dev/null
+pacstrap -K /mnt base "$KERNEL" "$MICROCODE" linux-firmware "$KERNEL"-headers sbctl btrfs-progs grub grub-btrfs rsync efibootmgr snapper reflector snap-pac zram-generator sudo 
 # pacstrap installs packages to the new system
 # -K is used to initialize the pacman keyring
 # /mnt is the target directory
@@ -212,7 +212,7 @@ EOF
 
 # install network packages
 echo "installing network packages"
-pacstrap /mnt wpa_supplicant dhcpcd >/dev/null
+pacstrap /mnt wpa_supplicant dhcpcd 
 # pacstrap installs packages to the new system
 # wpa_supplicant and dhcpcd are network-related packages
 # >/dev/null redirects stdout to /dev/null (suppresses output)
