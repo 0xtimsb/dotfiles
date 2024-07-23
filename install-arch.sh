@@ -182,11 +182,6 @@ chattr +C /mnt/var/log
 # mount the EFI System Partition
 mount "$ESP" /mnt/boot/
 
-# update mirrorlist for pacstrap
-echo "updating mirrorlist for faster downloads"
-pacman -Sy reflector --noconfirm
-reflector --country 'India' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-
 # install base system packages
 echo "installing base system"
 pacstrap -K /mnt base "$KERNEL" "$MICROCODE" linux-firmware "$KERNEL"-headers sbctl btrfs-progs grub grub-btrfs rsync efibootmgr snapper reflector snap-pac zram-generator sudo 
