@@ -1,5 +1,15 @@
 #!/bin/bash
 
+cleanup() {
+    echo "cleaning up..."
+    umount -R /mnt 2>/dev/null
+    cryptsetup close cryptroot 2>/dev/null
+    echo "cleanup done"
+}
+
+# trap to call cleanup function if script exits unexpectedly
+trap cleanup EXIT
+
 echo "installing arch linux"
 
 # initialize password variables
@@ -171,6 +181,11 @@ chattr +C /mnt/var/log
 
 # mount the EFI System Partition
 mount "$ESP" /mnt/boot/
+
+# update mirrorlist for pacstrap
+echo "updating mirrorlist for faster downloads"
+pacman -Sy reflector --noconfirm
+reflector --country 'India' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 # install base system packages
 echo "installing base system"
