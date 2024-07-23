@@ -62,18 +62,15 @@ echo "creating new partitions on $DISK"
 
 parted -s "$DISK" \
 mklabel gpt \
+mkpart ESP fat32 1MiB 1025MiB \
+set 1 esp on \
+mkpart CRYPTROOT 1025MiB 100%
 # parted is used for partition manipulation
 # -s runs in script mode (non-interactive)
 # mklabel gpt creates a new GPT partition table
-
-mkpart ESP fat32 1MiB 1025MiB \
 # creates a new partition named ESP, formatted as fat32
 # starts at 1MiB and ends at 1025MiB
-
-set 1 esp on \
 # sets the esp (EFI System Partition) flag on the first partition
-
-mkpart CRYPTROOT 1025MiB 100% \
 # creates a new partition named CRYPTROOT
 # starts at 1025MiB and uses the rest of the disk (100%)
 
