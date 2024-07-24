@@ -1,6 +1,7 @@
-set fish_greeting
-
-set -x LANG en_US.UTF-8
-set -x LC_ALL en_US.UTF-8
-
 alias vim="nvim"
+
+if status is-login
+    if test -z "$WAYLAND_DISPLAY" -a "$XDG_VTNR" = 1
+        exec sway
+    end
+end

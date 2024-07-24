@@ -1,13 +1,13 @@
 1.
 
 ```
-curl -L -O https://github.com/0xtimsb/dotfiles/archive/master.zip
+curl -L -O https://github.com/0xtimsb/dotfiles/archive/main.zip
 ```
 
 2.
 
 ```
-bsdtar -xvf dotfiles-main.zip
+bsdtar -xvf main.zip
 ```
 
 3.

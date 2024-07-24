@@ -230,12 +230,25 @@ pacstrap /mnt wpa_supplicant dhcpcd
 # wpa_supplicant and dhcpcd are network-related packages
 # >/dev/null redirects stdout to /dev/null (suppresses output)
 
+# install additional packages
+echo "installing additional packages"
+pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim
+
 # enable network services
 systemctl enable wpa_supplicant --root=/mnt &>/dev/null
 systemctl enable dhcpcd --root=/mnt &>/dev/null
+systemctl enable seatd.service --root=/mnt &>/dev/null
 # enables wpa_supplicant and dhcpcd services to start on boot
 # --root=/mnt specifies the root directory for the new system
 # &>/dev/null suppresses all output
+
+# moving dotfiles to the new system
+echo "moving dotfiles to the new system ansd setting up stow"
+cp -r /dotfiles /mnt/root/dotfiles
+arch-chroot /mnt /bin/bash -c "mkdir -p /root/.config"
+arch-chroot /mnt /bin/bash -c "cd /root/dotfiles && stow -v -t /root/.config -d .config ."
+
+echo "config files have been linked!"
 
 # configure mkinitcpio.conf
 echo "configuring /etc/mkinitcpio.conf"
@@ -314,11 +327,11 @@ echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
 # > redirects the output to the file /mnt/etc/sudoers.d/wheel
 
 # create new user
-arch-chroot /mnt useradd -m -G wheel -s /bin/bash "$USER_NAME"
+arch-chroot /mnt useradd -m -G wheel,seat -s /bin/bash "$USER_NAME"
 # arch-chroot /mnt runs the command in the /mnt environment
 # useradd creates a new user
 # -m creates the user's home directory
-# -G wheel adds the user to the wheel group
+# -G wheel,seat adds the user to the wheel group and seat group
 # -s /bin/bash sets the user's login shell to bash
 # "$USER_NAME" is the name of the new user
 
@@ -369,8 +382,8 @@ EOF
 # sets zram size to the minimum of available RAM or 8192 MB
 
 # enable various services
-echo "enabling reflector, automatic snapshots, btrfs scrubbing and systemd-oomd"
-services=(reflector.timer snapper-timeline.timer snapper-cleanup.timer btrfs-scrub@-.timer btrfs-scrub@home.timer btrfs-scrub@var-log.timer btrfs-scrub@\\x2esnapshots.timer grub-btrfsd.service systemd-oomd)
+echo "enabling reflector, automatic snapshots, btrfs scrubbing, seatd and systemd-oomd"
+services=(reflector.timer snapper-timeline.timer snapper-cleanup.timer btrfs-scrub@-.timer btrfs-scrub@home.timer btrfs-scrub@var-log.timer btrfs-scrub@\\x2esnapshots.timer grub-btrfsd.service systemd-oomd seatd)
 # defines an array of services to be enabled
 
 # loop through services and enable them
@@ -389,5 +402,10 @@ done
 # - grub-btrfsd: for GRUB with btrfs
 # - systemd-oomd: for out-of-memory daemon
 
-echo "done! you can reboot"
+# set fish as default shell for user
+echo "setting fish as default shell for $USER_NAME"
+arch-chroot /mnt chsh -s /usr/bin/fish $USERNAME
+
+echo "done!"
+
 exit
