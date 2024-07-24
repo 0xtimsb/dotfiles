@@ -16,6 +16,8 @@ echo "installing arch linux"
 DISK_PASSWORD=""
 USER_PASSWORD=""
 ROOT_PASSWORD=""
+WIFI_NAME=""
+WIFI_PASSWORD=""
 
 # set keyboard layout
 KEY_LAYOUT="us"
@@ -223,23 +225,11 @@ EOF
 echo "installing network manager"
 pacstrap /mnt networkmanager
 
-# install additional packages
-echo "installing additional packages"
-pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
-
 # enable network services
 systemctl enable NetworkManager --root=/mnt &>/dev/null
 # enables wpa_supplicant and dhcpcd services to start on boot
 # --root=/mnt specifies the root directory for the new system
 # &>/dev/null suppresses all output
-
-# moving dotfiles to the new system
-echo "moving dotfiles to the new system ansd setting up stow"
-cp -r ../dotfiles "/mnt/home/$USER_NAME/dotfiles"
-arch-chroot /mnt /bin/bash -c "mkdir -p /home/$USER_NAME/.config"
-arch-chroot /mnt /bin/bash -c "cd /home/$USER_NAME/dotfiles && stow -v -t /home/$USER_NAME/.config -d .config ."
-
-echo "config files have been linked!"
 
 # configure mkinitcpio.conf
 echo "configuring /etc/mkinitcpio.conf"
@@ -300,7 +290,6 @@ arch-chroot /mnt /bin/bash -e <<EOF
     # creating grub config file
     grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
     # generates GRUB configuration file
-
 EOF
 
 # set root password
@@ -333,6 +322,25 @@ echo "$USER_NAME:$USER_PASSWORD" | arch-chroot /mnt chpasswd
 # | pipes this string to the chpasswd command
 # arch-chroot /mnt runs the command in the /mnt environment
 # chpasswd changes the password for the specified user
+
+# chroot into the new system as the new user
+echo "installing packages and setting up config for $USER_NAME"
+arch-chroot /mnt /bin/bash -e <<EOF
+    su - $USER_NAME
+
+    # install additional packages
+    sudo pacman -Sy stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
+
+    # setup dotfiles
+    cd ~
+    git clone https://github.com/0xtimsb/dotfiles.git
+    cd ~/dotfiles
+    mkdir -p ~/.config
+    stow -v -t ~/.config -d .config .
+
+    # setup network manager for next reboot
+    nmcli device wifi connect $WIFI_NAME password $WIFI_PASSWORD
+EOF
 
 # create directory for pacman hooks
 echo "configuring /boot backup when pacman transactions are made."
