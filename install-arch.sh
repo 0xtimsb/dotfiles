@@ -1,14 +1,14 @@
 #!/bin/bash
 
-cleanup() {
-    echo "cleaning up..."
-    umount -R /mnt 2>/dev/null
-    cryptsetup close cryptroot 2>/dev/null
-    echo "cleanup done"
-}
+# cleanup() {
+#     echo "cleaning up..."
+#     umount -R /mnt 2>/dev/null
+#     cryptsetup close cryptroot 2>/dev/null
+#     echo "cleanup done"
+# }
 
 # trap to call cleanup function if script exits unexpectedly
-trap cleanup EXIT
+# trap cleanup EXIT
 
 echo "installing arch linux"
 
@@ -225,7 +225,7 @@ pacstrap /mnt networkmanager
 
 # install additional packages
 echo "installing additional packages"
-pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim
+pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
 
 # enable network services
 systemctl enable NetworkManager --root=/mnt &>/dev/null
