@@ -329,7 +329,7 @@ arch-chroot /mnt /bin/bash -e <<EOF
     su - $USER_NAME
 
     # install additional packages
-    sudo pacman -Sy stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
+    echo $USER_PASSWORD | sudo pacman -Sy --noconfirm stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
 
     # setup dotfiles
     cd ~
@@ -340,6 +340,9 @@ arch-chroot /mnt /bin/bash -e <<EOF
 
     # setup network manager for next reboot
     nmcli device wifi connect $WIFI_NAME password $WIFI_PASSWORD
+
+    # set fish as default shell for user
+    chsh -s /usr/bin/fish $USERNAME
 EOF
 
 # create directory for pacman hooks
@@ -400,10 +403,6 @@ done
 # - btrfs-scrub: for filesystem integrity checks
 # - grub-btrfsd: for GRUB with btrfs
 # - systemd-oomd: for out-of-memory daemon
-
-# set fish as default shell for user
-echo "setting fish as default shell for $USER_NAME"
-arch-chroot /mnt chsh -s /usr/bin/fish $USERNAME
 
 echo "done!"
 
