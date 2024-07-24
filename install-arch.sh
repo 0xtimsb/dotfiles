@@ -234,7 +234,6 @@ pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako w
 # enable network services
 systemctl enable wpa_supplicant --root=/mnt &>/dev/null
 systemctl enable dhcpcd --root=/mnt &>/dev/null
-systemctl enable seatd.service --root=/mnt &>/dev/null
 # enables wpa_supplicant and dhcpcd services to start on boot
 # --root=/mnt specifies the root directory for the new system
 # &>/dev/null suppresses all output
@@ -324,11 +323,11 @@ echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
 # > redirects the output to the file /mnt/etc/sudoers.d/wheel
 
 # create new user
-arch-chroot /mnt useradd -m -G wheel,seat -s /bin/bash "$USER_NAME"
+arch-chroot /mnt useradd -m -G wheel -s /bin/bash "$USER_NAME"
 # arch-chroot /mnt runs the command in the /mnt environment
 # useradd creates a new user
 # -m creates the user's home directory
-# -G wheel,seat adds the user to the wheel group and seat group
+# -G wheel adds the user to the wheel group
 # -s /bin/bash sets the user's login shell to bash
 # "$USER_NAME" is the name of the new user
 
@@ -379,8 +378,8 @@ EOF
 # sets zram size to the minimum of available RAM or 8192 MB
 
 # enable various services
-echo "enabling reflector, automatic snapshots, btrfs scrubbing, seatd and systemd-oomd"
-services=(reflector.timer snapper-timeline.timer snapper-cleanup.timer btrfs-scrub@-.timer btrfs-scrub@home.timer btrfs-scrub@var-log.timer btrfs-scrub@\\x2esnapshots.timer grub-btrfsd.service systemd-oomd seatd)
+echo "enabling reflector, automatic snapshots, btrfs scrubbing and systemd-oomd"
+services=(reflector.timer snapper-timeline.timer snapper-cleanup.timer btrfs-scrub@-.timer btrfs-scrub@home.timer btrfs-scrub@var-log.timer btrfs-scrub@\\x2esnapshots.timer grub-btrfsd.service systemd-oomd)
 # defines an array of services to be enabled
 
 # loop through services and enable them
