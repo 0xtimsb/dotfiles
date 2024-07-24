@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# cleanup() {
-#     echo "cleaning up..."
-#     umount -R /mnt 2>/dev/null
-#     cryptsetup close cryptroot 2>/dev/null
-#     echo "cleanup done"
-# }
+cleanup() {
+    echo "cleaning up..."
+    umount -R /mnt 2>/dev/null
+    cryptsetup close cryptroot 2>/dev/null
+    echo "cleanup done"
+}
 
 # trap to call cleanup function if script exits unexpectedly
-# trap cleanup EXIT
+trap cleanup EXIT
 
 echo "installing arch linux"
 
@@ -329,7 +329,7 @@ arch-chroot /mnt /bin/bash -e <<EOF
     su - $USER_NAME
 
     # install additional packages
-    echo $USER_PASSWORD | sudo pacman -Sy --noconfirm stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
+    sudo pacman -Sy --noconfirm stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim git
 
     # setup dotfiles
     cd ~
@@ -339,6 +339,7 @@ arch-chroot /mnt /bin/bash -e <<EOF
     stow -v -t ~/.config -d .config .
 
     # setup network manager for next reboot
+    systemctl start NetworkManager
     nmcli device wifi connect $WIFI_NAME password $WIFI_PASSWORD
 
     # set fish as default shell for user
