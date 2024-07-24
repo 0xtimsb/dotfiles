@@ -220,29 +220,24 @@ cat > /mnt/etc/hosts <<EOF
 EOF
 # creates /etc/hosts file with localhost and hostname entries
 
-# install network packages
-echo "installing network packages"
-pacstrap /mnt wpa_supplicant dhcpcd 
-# pacstrap installs packages to the new system
-# wpa_supplicant and dhcpcd are network-related packages
-# >/dev/null redirects stdout to /dev/null (suppresses output)
+echo "installing network manager"
+pacstrap /mnt networkmanager
 
 # install additional packages
 echo "installing additional packages"
 pacstrap /mnt stow sway swaylock swayidle swaybg foot wmenu xorg-xwayland mako wl-clipboard grim slurp fish neovim
 
 # enable network services
-systemctl enable wpa_supplicant --root=/mnt &>/dev/null
-systemctl enable dhcpcd --root=/mnt &>/dev/null
+systemctl enable NetworkManager --root=/mnt &>/dev/null
 # enables wpa_supplicant and dhcpcd services to start on boot
 # --root=/mnt specifies the root directory for the new system
 # &>/dev/null suppresses all output
 
 # moving dotfiles to the new system
 echo "moving dotfiles to the new system ansd setting up stow"
-cp -r /dotfiles /mnt/root/dotfiles
-arch-chroot /mnt /bin/bash -c "mkdir -p /root/.config"
-arch-chroot /mnt /bin/bash -c "cd /root/dotfiles && stow -v -t /root/.config -d .config ."
+cp -r ../dotfiles "/mnt/home/$USER_NAME/dotfiles"
+arch-chroot /mnt /bin/bash -c "mkdir -p /home/$USER_NAME/.config"
+arch-chroot /mnt /bin/bash -c "cd /home/$USER_NAME/dotfiles && stow -v -t /home/$USER_NAME/.config -d .config ."
 
 echo "config files have been linked!"
 
