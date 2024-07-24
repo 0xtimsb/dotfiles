@@ -17,9 +17,6 @@ DISK_PASSWORD=""
 USER_PASSWORD=""
 ROOT_PASSWORD=""
 
-# use reflector to update mirrorlist
-reflector --latest 200 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
-
 # set keyboard layout
 KEY_LAYOUT="us"
 loadkeys "$KEY_LAYOUT"
