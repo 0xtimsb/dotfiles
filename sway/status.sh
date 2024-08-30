@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 update_status() {
     battery_0=$(cat /sys/class/power_supply/BAT0/capacity)

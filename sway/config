@@ -14,8 +14,6 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-include /etc/sway/config-vars.d/*
-
 set $out-main eDP-1
 set $out-ext DP-1
 
@@ -141,4 +139,3 @@ bar {
     }
 }
 
-include /etc/sway/config.d/*
