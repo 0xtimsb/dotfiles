@@ -5,6 +5,12 @@
     [
       /etc/nixos/hardware-configuration.nix
     ];
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "oasis";
@@ -31,6 +37,9 @@
     layout = "us";
     variant = "";
   };
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
   users.users.tims = {
     isNormalUser = true;
     description = "tims";
@@ -48,15 +57,36 @@
     swayidle
     swaylock
     wl-clipboard
+    sway-contrib.grimshot
     stow
     git
     brightnessctl
     inotifyTools
-    blueman
     vscode
     spotify
+    dconf
+    xdg-utils
+    # for dev
     nodejs_22
     bun
+    # for oss
+    automake
+    ccache
+    cmake 
+    coreutils 
+    gnused # for gnu-sed
+    go 
+    icu # for icu4c
+    libiconv
+    libtool
+    ninja
+    pkg-config
+    rustup # for rust
+    ruby
+    #llvmPackages_16.clangUseLLVM
+    #llvmPackages_16.bintools
+    #clang_16
+    llvmPackages_16.clang-unwrapped
   ];
   system.stateVersion = "24.05"; 
 }
