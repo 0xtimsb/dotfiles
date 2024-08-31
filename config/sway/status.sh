@@ -13,7 +13,7 @@ update_status() {
     fi
     
     brightness=$(brightnessctl -m -d intel_backlight | cut -d',' -f4 | tr -d %)
-    date_time=$(date +'%Y-%m-%d %I:%M:%S %p')
+    date_time=$(date +'%a %Y-%m-%d %I:%M:%S %p')
     echo "bat main: $battery_0% | bat alt: $battery_1% | vol: $volume | bright: $brightness% | date: $date_time "
 }
 
