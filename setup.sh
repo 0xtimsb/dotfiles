@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 GIT_NAME="tims"
 GIT_EMAIL="0xtimsb@gmail.com"
+DOTFILES_REPO="https://github.com/0xtimsb/dotfiles.git"
+DOTFILES_DIR="$HOME/dotfiles"
 
 run_in_fish() {
     fish -c "$1"
@@ -21,7 +23,7 @@ Pin-Priority: -1" | sudo tee /etc/apt/preferences.d/firefox-no-snap.pref
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt update
 
-sudo apt install -y firefox fonts-noto-core git sway swaylock swayidle fish foot neovim inotify-tools brightnessctl blueman
+sudo apt install -y firefox fonts-noto-core git sway swaylock swayidle fish foot neovim inotify-tools brightnessctl blueman stow
 
 sudo timedatectl set-timezone Asia/Kolkata
 
@@ -50,5 +52,19 @@ run_in_fish "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main
 run_in_fish "fisher install jorgebucaran/nvm.fish"
 
 run_in_fish "nvm install lts"
+
+git clone "$DOTFILES_REPO" "$HOME/dotfiles"
+
+stow_dir() {
+    local source_dir="$1"
+    local target_dir="$2"
+    local stow_dir="$3"
+
+    echo "stowing $stow_dir to $target_dir"
+    stow -v -R -t "$target_dir" -d "$source_dir" --adopt "$stow_dir"
+}
+
+stow_dir "$DOTFILES_DIR" "$HOME/.config" "config"
+stow_dir "$DOTFILES_DIR" "$HOME" "home"
 
 echo "yay logout and log back in!"
