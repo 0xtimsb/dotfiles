@@ -14,7 +14,7 @@
       nixosConfigurations.oasis = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          /etc/nixos/configuration.nix
+          ./configuration.nix
         ];
       };
     };
