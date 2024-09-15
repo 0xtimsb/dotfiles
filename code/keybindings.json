@@ -1,0 +1,38 @@
+[
+  {
+    "key": "meta+g p",
+    "command": "git.push"
+  },
+  {
+    "key": "meta+g shift+p",
+    "command": "git.pull"
+  },
+  {
+    "key": "meta+g c",
+    "command": "git.checkout"
+  },
+  {
+    "key": "meta+g f",
+    "command": "git.fetch"
+  },
+  {
+    "key": "meta+g l",
+    "command": "git.stashPopLatest"
+  },
+  {
+    "key": "meta+g s",
+    "command": "git.stash"
+  },
+  {
+    "key": "meta+g space",
+    "command": "git.commit"
+  },
+  {
+    "key": "meta+g b",
+    "command": "git.branch"
+  },
+  {
+    "key": "meta+g u",
+    "command": "git.undoCommit"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.lineNumbers": "relative",
+  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<C-p>": false
+  }
+}
