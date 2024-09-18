@@ -13,7 +13,7 @@
   },
   {
     "key": "meta+g f",
-    "command": "git.fetch"
+    "command": "git.fetchAll"
   },
   {
     "key": "meta+g l",
@@ -34,5 +34,37 @@
   {
     "key": "meta+g u",
     "command": "git.undoCommit"
-  }
+  },
+  {
+		"key": "cmd+g m",
+		"command": "git.merge"
+	},
+  {
+		"key": "cmd+g d",
+		"command": "git.cleanAll"
+	},
+  	{
+		"key": "cmd+g n",
+		"command": "git.branch"
+	},
+	{
+		"key": "shift+cmd+g",
+		"command": "-editor.action.previousMatchFindAction",
+		"when": "editorFocus"
+	},
+	{
+		"key": "shift+cmd+g",
+		"command": "-workbench.action.terminal.findPrevious",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+	},
+	{
+		"key": "shift+cmd+g",
+		"command": "-workbench.action.terminal.openDetectedLink",
+		"when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+	},
+	{
+		"key": "shift+cmd+g",
+		"command": "workbench.view.scm",
+		"when": "workbench.scm.active"
+	}
 ]
