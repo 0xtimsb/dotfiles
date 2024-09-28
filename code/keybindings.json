@@ -1,70 +1,70 @@
 [
   {
-    "key": "meta+g p",
+    "key": "ctrl+g p",
     "command": "git.push"
   },
   {
-    "key": "meta+g shift+p",
+    "key": "ctrl+g shift+p",
     "command": "git.pull"
   },
   {
-    "key": "meta+g c",
+    "key": "ctrl+g c",
     "command": "git.checkout"
   },
   {
-    "key": "meta+g f",
+    "key": "ctrl+g f",
     "command": "git.fetchAll"
   },
   {
-    "key": "meta+g l",
+    "key": "ctrl+g l",
     "command": "git.stashPopLatest"
   },
   {
-    "key": "meta+g s",
+    "key": "ctrl+g s",
     "command": "git.stash"
   },
   {
-    "key": "meta+g space",
+    "key": "ctrl+g space",
     "command": "git.commit"
   },
   {
-    "key": "meta+g b",
+    "key": "ctrl+g b",
     "command": "git.branch"
   },
   {
-    "key": "meta+g u",
+    "key": "ctrl+g u",
     "command": "git.undoCommit"
   },
   {
-		"key": "cmd+g m",
-		"command": "git.merge"
-	},
+    "key": "ctrl+g m",
+    "command": "git.merge"
+  },
   {
-		"key": "cmd+g d",
-		"command": "git.cleanAll"
-	},
-  	{
-		"key": "cmd+g n",
-		"command": "git.branch"
-	},
-	{
-		"key": "shift+cmd+g",
-		"command": "-editor.action.previousMatchFindAction",
-		"when": "editorFocus"
-	},
-	{
-		"key": "shift+cmd+g",
-		"command": "-workbench.action.terminal.findPrevious",
-		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
-	},
-	{
-		"key": "shift+cmd+g",
-		"command": "-workbench.action.terminal.openDetectedLink",
-		"when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
-	},
-	{
-		"key": "shift+cmd+g",
-		"command": "workbench.view.scm",
-		"when": "workbench.scm.active"
-	}
+    "key": "ctrl+g d",
+    "command": "git.cleanAll"
+  },
+  {
+    "key": "ctrl+g n",
+    "command": "git.branch"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  }
 ]
