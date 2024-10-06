@@ -5,6 +5,9 @@ set $down j
 set $up k
 set $right l
 
+# screenshot
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+
 # brightness
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -22,11 +25,19 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-set $out-main eDP-1
 set $out-ext DP-1
+set $out-main eDP-1
 
+# 2160 / 1.5 = 1440 
+output $out-ext pos 0 -1440 res 3840x2160 scale 1.5
 output $out-main pos 0 0 res 1920x1080 scale 1.2
-output $out-ext pos 0 -1080 res 1920x1080
+
+#  lid switch handling
+bindswitch --reload --locked lid:on output $out-main disable
+bindswitch --reload --locked lid:off output $out-main enable
+
+# auto handel workspace move when display changes
+workspace_auto_back_and_forth yes
 
 # to get output: swaymsg -t get_outputs
 
@@ -83,6 +94,8 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
+workspace_auto_back_and_forth no
+
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -115,6 +128,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+Up sticky toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
@@ -133,13 +147,28 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+set $pri      #446e85
+set $pri-text #ffffff
+set $sec      #121212
+set $sec-text #ffffff
+set $dan      #ff0000
+
 bar {
     position top
     status_command ~/.config/sway/status.sh
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline $sec-text
+        background $sec
+#                          border  bg      text
+        focused_workspace  $pri    $pri    $pri-text
+        active_workspace   $sec    $sec    $sec-text
+        inactive_workspace $sec    $sec    $sec-text
+        urgent_workspace   $dan    $dan    $pri-text
     }
 }
 
+#                       border  bg      text      indicator
+client.focused          $pri    $pri    $pri-text $sec-text
+client.unfocused        $sec    $sec    $sec-text $sec-text
+client.focused_inactive $sec    $sec    $sec-text $sec-text
+client.urgent           $dan    $dan    $sec-text $sec-text
