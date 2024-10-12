@@ -1,0 +1,70 @@
+[
+  {
+    "key": "ctrl+g p",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+g shift+p",
+    "command": "git.pull"
+  },
+  {
+    "key": "ctrl+g c",
+    "command": "git.checkout"
+  },
+  {
+    "key": "ctrl+g f",
+    "command": "git.fetchAll"
+  },
+  {
+    "key": "ctrl+g l",
+    "command": "git.stashPopLatest"
+  },
+  {
+    "key": "ctrl+g s",
+    "command": "git.stash"
+  },
+  {
+    "key": "ctrl+g space",
+    "command": "git.commit"
+  },
+  {
+    "key": "ctrl+g b",
+    "command": "git.branch"
+  },
+  {
+    "key": "ctrl+g u",
+    "command": "git.undoCommit"
+  },
+  {
+    "key": "ctrl+g m",
+    "command": "git.merge"
+  },
+  {
+    "key": "ctrl+g d",
+    "command": "git.cleanAll"
+  },
+  {
+    "key": "ctrl+g n",
+    "command": "git.branch"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "-workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "shift+ctrl+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  }
+]

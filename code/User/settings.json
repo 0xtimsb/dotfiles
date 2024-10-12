@@ -11,6 +11,14 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.handleKeys": {
     "<C-w>": false,
-    "<C-p>": false
-  }
+    "<C-p>": false,
+    "<C-b>": false,
+    "<C-f>": false
+  },
+  "workbench.colorTheme": "Tokyo Night",
+  "cursor.cpp.disabledLanguages": ["markdown"],
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "git.replaceTagsWhenPull": true
 }

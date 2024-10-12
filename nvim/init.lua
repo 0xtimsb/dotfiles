@@ -32,9 +32,13 @@ require("lazy").setup({
   },
   { "windwp/nvim-autopairs", config = true },
   { "numToStr/Comment.nvim", config = true },
-  { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = { style = "night" } },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  }
 }, {
-  install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true, notify = false },
 })
 
@@ -65,9 +69,9 @@ vim.opt.expandtab = true
 
 -- syntax highlighting
 vim.cmd('syntax on')
+vim.opt.background = "dark"
 
--- colorscheme
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme tokyonight-night]]
 
 -- c++
 --vim.api.nvim_set_keymap('n', '<C-b>', ':w<CR>:!g++-12 % -o %:r && ./%:r < input.txt; rm %:r<CR>', { noremap = true, silent = true })
