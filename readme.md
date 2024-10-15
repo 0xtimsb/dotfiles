@@ -30,7 +30,7 @@ firefox blueman curl wget wl-clipboard playerctl
 syncthing wf-recorder base-devel neofetch htop
 grim vlc transmission-gtk slurp openssh foot fuse
 power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
-pusleaudio pulseaudio-bluetooth
+pusleaudio pulseaudio-bluetooth gnome-keyring
 ```
 
 for yay follow this: [here](https://github.com/Jguer/yay)
