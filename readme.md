@@ -25,8 +25,12 @@ vim /etc/sudoers
 
 packages to install post user:
 ```
-fish neovim git rustup sway swayidle swaylock brightnessctl firefox pulseaudio blueman curl wget wl-clipboard playerctl syncthing wf-recorder build-essential font-noto-core inotify-tools neofetch htop grim vlc cloudflare-warp transmission-gtk slurp spotify-client
+fish neovim git rustup sway swayidle swaylock brightnessctl firefox pulseaudio blueman curl wget wl-clipboard playerctl syncthing wf-recorder base-devel inotify-tools neofetch htop grim vlc transmission-gtk slurp
 ```
+
+install `jack2`, `noto-fonts` as dependencies.
+
+` cloudflare-warp  spotify-client` figure out
 
 for rust follow this: [here](https://wiki.debian.org/Rust)
 
