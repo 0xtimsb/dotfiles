@@ -28,7 +28,7 @@ packages to install post user:
 fish neovim git rustup sway swayidle swaylock bluez
 firefox pulseaudio blueman curl wget wl-clipboard playerctl
 syncthing wf-recorder base-devel neofetch htop
-grim vlc transmission-gtk slurp openssh foot
+grim vlc transmission-gtk slurp openssh foot fuse
 ```
 
 install `jack2`, `noto-fonts` as dependencies.
