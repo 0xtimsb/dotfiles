@@ -25,7 +25,10 @@ vim /etc/sudoers
 
 packages to install post user:
 ```
-fish neovim git rustup sway swayidle swaylock brightnessctl firefox pulseaudio blueman curl wget wl-clipboard playerctl syncthing wf-recorder base-devel inotify-tools neofetch htop grim vlc transmission-gtk slurp
+fish neovim git rustup sway swayidle swaylock brightnessctl
+firefox pulseaudio blueman curl wget wl-clipboard playerctl
+syncthing wf-recorder base-devel inotify-tools neofetch htop
+grim vlc transmission-gtk slurp openssh foot
 ```
 
 install `jack2`, `noto-fonts` as dependencies.
