@@ -29,10 +29,10 @@ fish neovim git rustup sway swayidle swaylock bluez
 firefox pulseaudio blueman curl wget wl-clipboard playerctl
 syncthing wf-recorder base-devel neofetch htop
 grim vlc transmission-gtk slurp openssh foot fuse
-power-profiles-daemon
+power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
 ```
 
-install `jack2`, `noto-fonts` as dependencies.
+install `jack2` as dependencies.
 
 ` cloudflare-warp` figure out
 
