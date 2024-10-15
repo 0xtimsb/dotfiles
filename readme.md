@@ -33,10 +33,6 @@ power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
 pipewire pipewire-alsa pipewire-pulse
 ```
 
-install `jack2` as dependencies.
-
-` cloudflare-warp` figure out
-
 for yay follow this: [here](https://github.com/Jguer/yay)
 
 yay apps:
