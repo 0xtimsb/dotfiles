@@ -1,3 +1,7 @@
+live:
+```
+pacstrap -K /mnt base linux linux-firmware networkmanager intel-ucode vim grub efibootmgr
+```
 
 as root:
 ```
