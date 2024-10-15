@@ -29,6 +29,7 @@ fish neovim git rustup sway swayidle swaylock bluez
 firefox pulseaudio blueman curl wget wl-clipboard playerctl
 syncthing wf-recorder base-devel neofetch htop
 grim vlc transmission-gtk slurp openssh foot fuse
+power-profiles-daemon
 ```
 
 install `jack2`, `noto-fonts` as dependencies.
