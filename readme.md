@@ -1,7 +1,9 @@
-live:
+in live cd:
 ```
 pacstrap -K /mnt base linux linux-firmware networkmanager intel-ucode vim grub efibootmgr
 ```
+
+self note: make sure to add `--removable` flag while grub install on msi motherboard
 
 as root:
 ```
