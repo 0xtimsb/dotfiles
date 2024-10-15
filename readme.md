@@ -25,9 +25,9 @@ vim /etc/sudoers
 
 packages to install post user:
 ```
-fish neovim git rustup sway swayidle swaylock brightnessctl
+fish neovim git rustup sway swayidle swaylock bluez
 firefox pulseaudio blueman curl wget wl-clipboard playerctl
-syncthing wf-recorder base-devel inotify-tools neofetch htop
+syncthing wf-recorder base-devel neofetch htop
 grim vlc transmission-gtk slurp openssh foot
 ```
 
