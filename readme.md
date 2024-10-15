@@ -34,9 +34,14 @@ power-profiles-daemon
 
 install `jack2`, `noto-fonts` as dependencies.
 
-` cloudflare-warp  spotify-client` figure out
+` cloudflare-warp` figure out
 
 for yay follow this: [here](https://github.com/Jguer/yay)
+
+yay apps:
+```
+spotify cloudflare-warp-bin
+```
 
 for rust follow this: [here](https://wiki.debian.org/Rust)
 
