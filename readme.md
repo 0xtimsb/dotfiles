@@ -18,6 +18,11 @@ passwd tims
 
 connect to wifi using network manager. install `sudo` as root. add `tims` is not sudoers file. 
 
+give wheel sudoer permission as root:
+```
+vim /etc/sudoers
+```
+
 packages to install post user:
 ```
 fish neovim git rustup sway swayidle swaylock brightnessctl firefox pulseaudio blueman curl wget wl-clipboard playerctl syncthing wf-recorder build-essential font-noto-core inotify-tools neofetch htop grim vlc cloudflare-warp transmission-gtk slurp spotify-client
