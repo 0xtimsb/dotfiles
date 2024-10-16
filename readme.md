@@ -31,6 +31,7 @@ syncthing wf-recorder base-devel neofetch htop
 grim vlc transmission-gtk slurp openssh foot fuse
 power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
 pusleaudio pulseaudio-bluetooth gnome-keyring
+gnome-disk-utility ntfs-3g
 ```
 
 for yay follow this: [here](https://github.com/Jguer/yay)
