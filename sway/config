@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 # font
-font pango:mono 16
+font pango:mono 9
 
 # screenshot
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
@@ -32,15 +32,13 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-set $out-ext DP-1
-set $out-main eDP-1
+set $out-ext DP-2
 
-output $out-ext pos 0 -2160 res 3840x2160
-output $out-main pos 0 0 res 1920x1080
+output $out-ext pos 0 0 res 3840x2160 scale 2
 
 #  lid switch handling
-bindswitch --reload --locked lid:on output $out-main disable
-bindswitch --reload --locked lid:off output $out-main enable
+#bindswitch --reload --locked lid:on output $out-main disable
+#bindswitch --reload --locked lid:off output $out-main enable
 
 # auto handel workspace move when display changes
 workspace_auto_back_and_forth yes
@@ -106,24 +104,20 @@ workspace_auto_back_and_forth no
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
-bindsym $mod+8 workspace a
-bindsym $mod+9 workspace b
-bindsym $mod+0 workspace c
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
 
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+8 move container to workspace a
-bindsym $mod+Shift+9 move container to workspace b
-bindsym $mod+Shift+0 move container to workspace c
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
 
 workspace 1 output $out-ext
 workspace 2 output $out-ext
 workspace 3 output $out-ext
-
-workspace a output $out-main
-workspace b output $out-main
-workspace c output $out-main
+workspace 4 output $out-ext
+workspace 5 output $out-ext
 
 bindsym $mod+b splith
 bindsym $mod+v splitv
