@@ -58,3 +58,12 @@ bind \cgs 'git-stash; commandline -f repaint'
 bind \cg' ' 'git-commit; commandline -f repaint'
 bind \cgu 'git-undoCommit; commandline -f repaint'
 bind \cgm 'git-merge; commandline -f repaint'
+
+# walk
+function lk
+  set loc (walk $argv); and cd $loc;
+end
+set -Ux EDITOR nvim
+
+# zoxide
+zoxide init fish | source
