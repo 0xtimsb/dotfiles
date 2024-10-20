@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 update_status() {
-    battery_0=$(cat /sys/class/power_supply/BAT0/capacity)
-    
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
     if [ "$is_muted" = "yes" ]; then
         volume="mute"
@@ -11,9 +9,14 @@ update_status() {
         volume="${volume}%"
     fi
     
-    brightness=$(brightnessctl -m -d intel_backlight | cut -d',' -f4 | tr -d %)
     date_time=$(date +'%a %Y-%m-%d %I:%M:%S %p')
-    echo "bat main: $battery_0% | vol: $volume | bright: $brightness% | date: $date_time "
+
+    wifi_network=$(iwgetid -r)
+    if [ -z "$wifi_network" ]; then
+        wifi_network="Disconnected"
+    fi
+
+    echo "vol: $volume | wifi: $wifi_network | $date_time"
 }
 
 cleanup() {
@@ -26,13 +29,6 @@ trap cleanup EXIT
 pactl subscribe | grep --line-buffered "sink" | while read -r; do
     update_status
 done &
-
-(
-    while true; do
-        inotifywait -q -e modify /sys/class/power_supply/BAT0/capacity /sys/class/backlight/intel_backlight/brightness > /dev/null 2>&1
-        update_status
-    done
-) &
 
 while true; do
     update_status
