@@ -32,13 +32,14 @@ grim vlc transmission-gtk slurp openssh foot fuse
 power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
 pusleaudio pulseaudio-bluetooth gnome-keyring
 gnome-disk-utility ntfs-3g sysstat wireless_tools
+zoxide
 ```
 
 for yay follow this: [here](https://github.com/Jguer/yay)
 
 yay apps:
 ```
-spotify cloudflare-warp-bin
+walk cloudflare-warp-bin
 ```
 
 for rust follow this: [here](https://wiki.debian.org/Rust)
