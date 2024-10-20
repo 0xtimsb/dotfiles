@@ -148,29 +148,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $pri      #446e85
-set $pri-text #ffffff
-set $sec      #121212
-set $sec-text #ffffff
-set $dan      #ff0000
-
 bar {
     position top
     status_command ~/.config/sway/status.sh
-    colors {
-        statusline $sec-text
-        background $sec
-#                          border  bg      text
-        focused_workspace  $pri    $pri    $pri-text
-        active_workspace   $sec    $sec    $sec-text
-        inactive_workspace $sec    $sec    $sec-text
-        urgent_workspace   $dan    $dan    $pri-text
-    }
 }
-
-#                       border  bg      text      indicator
-client.focused          $pri    $pri    $pri-text $sec-text
-client.unfocused        $sec    $sec    $sec-text $sec-text
-client.focused_inactive $sec    $sec    $sec-text $sec-text
-client.urgent           $dan    $dan    $sec-text $sec-text
 
