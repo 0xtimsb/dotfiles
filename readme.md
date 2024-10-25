@@ -8,7 +8,7 @@ apt install sudo
 
 packages:
 ```
-sway swayidle swaylock neovim git firefox-esr
+sudo apt install sway swayidle swaylock neovim git firefox-esr
 fish curl wl-clipboard playerctl
 syncthing wf-recorder neofetch htop grim slurp build-essential
 vlc transmission-gtk fonts-roboto fonts-liberation
@@ -18,8 +18,14 @@ xdg-desktop-portal-wlr xdg-desktop-portal-gtk rustup zoxide
 
 ----
 openssh  
-pusleaudio pulseaudio-bluetooth 
 ```
+
+remove packages:
+```
+sudo apt remove pulseaudio
+sudo apt autoremove
+```
+
 
 fish as default:
 ```
