@@ -24,6 +24,11 @@ sysstat wireless_tools
 xdg-desktop-portal  xdg-desktop-portal-gtk
 ```
 
+fish as default:
+```
+chsh -s /usr/bin/fish
+```
+
 for rust follow this: [here](https://wiki.debian.org/Rust)
 
 for node on fish, install [fisher](https://github.com/jorgebucaran/fisher) and [nvm.fish](https://github.com/jorgebucaran/nvm.fish?tab=readme-ov-file)
