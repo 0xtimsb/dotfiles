@@ -30,6 +30,8 @@ fish as default:
 chsh -s /usr/bin/fish
 ```
 
+for network/power permissions: `fish_add_path /sbin /usr/sbin`
+
 firefox scale fix: `layout.css.devPixelsPerPx` as `1.8` in `about:config`
 
 
