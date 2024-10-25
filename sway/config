@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 # font
-font pango:mono 9
+font pango:mono 18
 
 # screenshot
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
@@ -20,8 +20,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # audio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1dB
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1dB
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # mic
@@ -34,7 +34,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 set $out-ext DP-2
 
-output $out-ext pos 0 0 res 3840x2160 scale 2
+output $out-ext pos 0 0 res 3840x2160
 
 #  lid switch handling
 #bindswitch --reload --locked lid:on output $out-main disable
@@ -77,10 +77,14 @@ input "type:keyboard" {
 
 bindsym $mod+Return exec foot
 bindsym $mod+q exec firefox
-bindsym $mod+c exec cursor --ozone-platform=wayland
-#bindsym $mod+c exec zed
-bindsym $mod+m exec spotify --ozone-platform=wayland
-bindsym $mod+n exec vlc --ozone-platform=wayland
+bindsym $mod+z exec zed
+bindsym $mod+c exec QT_SCALE_FACTOR=2 calibre
+bindsym $mod+u exec QT_SCALE_FACTOR=2 virtualbox
+bindsym $mod+p exec QT_SCALE_FACTOR=2 vlc
+bindsym $mod+o exec /home/tims/.local/share/JetBrains/Toolbox/apps/rustrover/bin/rustrover
+bindsym $mod+g exec github-desktop --ozone-platform=wayland
+
+
 bindsym $mod+Shift+q kill
 
 floating_modifier $mod normal
