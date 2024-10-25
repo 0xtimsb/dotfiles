@@ -10,13 +10,15 @@ update_status() {
     fi
     
     date_time=$(date +'%a %Y-%m-%d %I:%M:%S %p')
+    cal_date_time=$(TZ="America/Los_Angeles" date +'%a %Y-%m-%d %I:%M:%S %p')
+
 
     wifi_network=$(iwgetid -r)
     if [ -z "$wifi_network" ]; then
         wifi_network="Disconnected"
     fi
 
-    echo "vol: $volume | wifi: $wifi_network | $date_time"
+    echo "vol: $volume | wifi: $wifi_network | california: $cal_date_time | india: $date_time "
 }
 
 cleanup() {
@@ -25,10 +27,6 @@ cleanup() {
 }
 
 trap cleanup EXIT
-
-pactl subscribe | grep --line-buffered "sink" | while read -r; do
-    update_status
-done &
 
 while true; do
     update_status
