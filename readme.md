@@ -6,20 +6,22 @@ apt upgrade
 apt install sudo
 ```
 
-as user:
+packages:
 ```
-sudo apt install sway swayidle swaylock neovim git firefox-esr
-```
+sway swayidle swaylock neovim git firefox-esr
+fish curl wl-clipboard playerctl
+syncthing wf-recorder neofetch htop grim slurp build-essential
+vlc transmission-gtk fonts-roboto fonts-liberation
+bluez blueman pipewire wireplumber 
+gnome-disk-utility ntfs-3g gnome-keyring
+xdg-desktop-portal-wlr rustup zoxide
 
-more:
-```
-sudo apt install fish rustup bluez blueman curl wget wl-clipboard playerctl
-syncthing wf-recorder base-devel neofetch htop
-grim vlc transmission-gtk slurp openssh foot fuse
-power-profiles-daemon ttf-liberation ttf-roboto noto-fonts
-pusleaudio pulseaudio-bluetooth gnome-keyring
-gnome-disk-utility ntfs-3g sysstat wireless_tools
-zoxide pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
+----
+openssh  
+power-profiles-daemon 
+pusleaudio pulseaudio-bluetooth 
+sysstat wireless_tools
+xdg-desktop-portal  xdg-desktop-portal-gtk
 ```
 
 for rust follow this: [here](https://wiki.debian.org/Rust)
