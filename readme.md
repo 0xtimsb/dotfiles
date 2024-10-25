@@ -12,7 +12,7 @@ sudo apt install sway swayidle swaylock neovim git firefox-esr
 fish curl wl-clipboard playerctl
 syncthing wf-recorder neofetch htop grim slurp build-essential
 vlc transmission-gtk fonts-roboto fonts-liberation
-bluez blueman pipewire wireplumber 
+bluez blueman pipewire wireplumber pipewire-audio
 gnome-disk-utility ntfs-3g gnome-keyring
 xdg-desktop-portal-wlr xdg-desktop-portal-gtk rustup zoxide
 
