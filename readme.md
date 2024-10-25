@@ -14,14 +14,11 @@ syncthing wf-recorder neofetch htop grim slurp build-essential
 vlc transmission-gtk fonts-roboto fonts-liberation
 bluez blueman pipewire wireplumber 
 gnome-disk-utility ntfs-3g gnome-keyring
-xdg-desktop-portal-wlr rustup zoxide
+xdg-desktop-portal-wlr xdg-desktop-portal-gtk rustup zoxide
 
 ----
 openssh  
-power-profiles-daemon 
 pusleaudio pulseaudio-bluetooth 
-sysstat wireless_tools
-xdg-desktop-portal  xdg-desktop-portal-gtk
 ```
 
 fish as default:
