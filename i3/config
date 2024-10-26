@@ -5,8 +5,11 @@ set $down j
 set $up k
 set $right l
 
+# picom
+exec --no-startup-id picom -b
+
 # font
-font pango:monospace 8
+font pango:monospace 10
 
 # autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -20,7 +23,7 @@ exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Natural Scro
 exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed" 0.8
 
 # keyboard
-exec --no-startup-id xset r rate 200 30
+exec_always --no-startup-id sleep  1; xset r rate 200 30
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
@@ -52,7 +55,7 @@ tiling_drag modifier titlebar
 bindsym $mod+d exec dmenu_run
 
 # apps
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xterm
 bindsym $mod+q exec firefox
 bindsym $mod+z exec zed
 bindsym $mod+c exec calibre
