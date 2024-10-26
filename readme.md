@@ -12,7 +12,7 @@ sudo apt install i3 xorg git firefox-esr \
 fish curl neovim xinput playerctl \
 syncthing neofetch htop build-essential \
 vlc transmission-gtk fonts-roboto fonts-liberation \
-bluez blueman \
+bluez blueman bluez-tools bluez-firmware \
 gnome-disk-utility ntfs-3g gnome-keyring \
 rustup zoxide \
 unzip calibre xclip maim xterm picom picom-conf
