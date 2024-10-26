@@ -8,15 +8,16 @@ apt install sudo
 
 packages:
 ```
-sudo apt install sway swayidle swaylock neovim git firefox-esr \
-fish curl wl-clipboard playerctl \
-syncthing wf-recorder neofetch htop grim slurp build-essential \
+sudo apt install i3 xorg git firefox-esr \
+fish curl playerctl \
+syncthing neofetch htop build-essential \
 vlc transmission-gtk fonts-roboto fonts-liberation \
-bluez blueman pipewire wireplumber pipewire-audio \
+bluez blueman \
 gnome-disk-utility ntfs-3g gnome-keyring \
-xdg-desktop-portal-wlr xdg-desktop-portal-gtk rustup zoxide \
+rustup zoxide \
 unzip calibre
 ```
+
 fish as default:
 ```
 chsh -s /usr/bin/fish
