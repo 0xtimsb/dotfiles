@@ -15,12 +15,17 @@ vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman \
 gnome-disk-utility ntfs-3g gnome-keyring \
 rustup zoxide \
-unzip calibre xclip maim
+unzip calibre xclip maim xterm
 ```
 
 fish as default:
 ```
 chsh -s /usr/bin/fish
+```
+
+remove:
+```
+sudo apt remove rxvt-unicode
 ```
 
 for network/power permissions: `fish_add_path /sbin /usr/sbin`
