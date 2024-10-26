@@ -28,6 +28,11 @@ remove:
 sudo apt remove rxvt-unicode
 ```
 
+sync:
+```
+xrdb -merge ~/.Xresources
+```
+
 for network/power permissions: `fish_add_path /sbin /usr/sbin`
 
 firefox scale fix: `layout.css.devPixelsPerPx` as `1.8` in `about:config`
