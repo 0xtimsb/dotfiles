@@ -9,7 +9,7 @@ apt install sudo
 packages:
 ```
 sudo apt install i3 xorg git firefox-esr \
-fish curl playerctl \
+fish curl neovim playerctl \
 syncthing neofetch htop build-essential \
 vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman \
@@ -40,7 +40,4 @@ for git follow this: [here](https://docs.github.com/en/authentication/connecting
 
 note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
 
-for screen share:
-
-1. restart first.
-2. test [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
+for screen share test: [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
