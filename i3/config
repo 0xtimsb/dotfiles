@@ -5,6 +5,18 @@ set $down j
 set $up k
 set $right l
 
+# bg
+exec --no-startup-id feh --bg-scale ~/.config/a.jpg
+
+# border
+default_border pixel 1
+default_floating_border pixel 1
+
+# gaps
+gaps inner 4
+gaps outer 2
+smart_gaps on
+
 # picom
 exec --no-startup-id picom -b
 
