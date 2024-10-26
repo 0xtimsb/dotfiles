@@ -35,7 +35,7 @@ for bun follow this: [here](https://bun.sh/docs/installation)
 
 for zed follow this: [here](https://zed.dev/docs/getting-started)
 
-for git follow this: [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+for git follow this: [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 for screen share:
 
