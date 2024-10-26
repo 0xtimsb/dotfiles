@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/683e9c8e-394f-4bcf-8bac-4ed5492be40b)as root:
+as root:
 ```
 usermod -aG sudo tims
 apt update
