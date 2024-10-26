@@ -37,6 +37,8 @@ for zed follow this: [here](https://zed.dev/docs/getting-started)
 
 for git follow this: [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
+note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
+
 for screen share:
 
 1. restart
