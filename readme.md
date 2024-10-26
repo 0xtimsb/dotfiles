@@ -1,4 +1,4 @@
-as root:
+![image](https://github.com/user-attachments/assets/683e9c8e-394f-4bcf-8bac-4ed5492be40b)as root:
 ```
 usermod -aG sudo tims
 apt update
@@ -15,7 +15,7 @@ vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman \
 gnome-disk-utility ntfs-3g gnome-keyring \
 rustup zoxide \
-unzip calibre xclip
+unzip calibre xclip maim
 ```
 
 fish as default:
