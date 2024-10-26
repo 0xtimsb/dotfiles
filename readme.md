@@ -15,7 +15,7 @@ vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman \
 gnome-disk-utility ntfs-3g gnome-keyring \
 rustup zoxide \
-unzip calibre xclip maim xterm
+unzip calibre xclip maim xterm picom picom-conf
 ```
 
 fish as default:
