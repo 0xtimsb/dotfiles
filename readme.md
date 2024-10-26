@@ -9,7 +9,7 @@ apt install sudo
 packages:
 ```
 sudo apt install i3 xorg git firefox-esr \
-fish curl neovim playerctl \
+fish curl neovim xinput playerctl \
 syncthing neofetch htop build-essential \
 vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman \
