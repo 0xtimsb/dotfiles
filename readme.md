@@ -17,14 +17,6 @@ gnome-disk-utility ntfs-3g gnome-keyring
 xdg-desktop-portal-wlr xdg-desktop-portal-gtk rustup zoxide
 unzip calibre
 ```
-
-remove packages:
-```
-sudo apt remove pulseaudio
-sudo apt autoremove
-```
-
-
 fish as default:
 ```
 chsh -s /usr/bin/fish
