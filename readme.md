@@ -15,8 +15,11 @@ vlc transmission-gtk fonts-roboto fonts-liberation \
 bluez blueman bluez-tools bluez-firmware \
 gnome-disk-utility ntfs-3g gnome-keyring \
 rustup zoxide feh \
-unzip calibre xclip maim xterm picom picom-conf
+unzip calibre xclip maim xterm picom picom-conf \
+xdg-desktop-portal-gtk
 ```
+
+note: `xdg-desktop-portal-gtk` is used for desktop portal fallback, used often to open files/dialogs by other apps.
 
 fish as default:
 ```
