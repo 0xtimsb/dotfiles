@@ -41,8 +41,5 @@ note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
 
 for screen share:
 
-1. restart
-2. run `dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway`
-3. run `systemctl --user restart pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk`
-4. make sure both are running `systemctl --user status xdg-desktop-portal-gtk xdg-desktop-portal-wlr`
-5. test [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
+1. restart first.
+2. test [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
