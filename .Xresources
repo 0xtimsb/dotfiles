@@ -4,6 +4,7 @@ XTerm*faceName: monospace
 XTerm*faceSize: 10
 XTerm*selectToClipboard: true
 XTerm*keepClipboard: true 
+XTerm*scrollBar: false
 
 XTerm*background: #1a1b26
 XTerm*foreground: #c0caf5
@@ -25,4 +26,3 @@ XTerm*color12: #7aa2f7
 XTerm*color13: #bb9af7
 XTerm*color14: #7dcfff
 XTerm*color15: #c0caf5
- 
