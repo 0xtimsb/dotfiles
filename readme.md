@@ -1,26 +1,31 @@
-packages:
+fedora i3 subset gives lot of packages by default. 
+
+move to stable kernel:
 ```
-sudo apt install i3 xorg git firefox-esr \
-fish curl neovim xinput playerctl \
-syncthing neofetch htop build-essential \
-vlc transmission-gtk fonts-roboto fonts-liberation \
-bluez blueman bluez-tools bluez-firmware \
-gnome-disk-utility ntfs-3g gnome-keyring \
-rustup zoxide feh \
-unzip calibre xclip maim xterm picom picom-conf \
-xdg-desktop-portal-gtk
+sudo dnf list kernel --showduplicates
+sudo dnf install kernel-xxx
+```
+then reboot and choose kernel from grub.
+
+extra packages:
+```
+sudo dnf install neovim git fish \
+xinput xclip xterm picom picom-conf \
+blueman bluez-tools playerctl
+google-roboto-fonts liberation-fonts
+syncthing neofetch \
+vlc transmission-gtk gnome-keyring \
+rustup zoxide calibre
 ```
 
-note: `xdg-desktop-portal-gtk` is used for desktop portal fallback, used often to open files/dialogs by other apps.
+nice to have build tool:
+```
+sudo dnf group install "C Development Tools and Libraries"
+```
 
 fish as default:
 ```
 chsh -s /usr/bin/fish
-```
-
-remove:
-```
-sudo apt remove rxvt-unicode
 ```
 
 sync:
