@@ -33,9 +33,15 @@ sync:
 xrdb -merge ~/.Xresources
 ```
 
-for network/power permissions: `fish_add_path /sbin /usr/sbin`
+for network/power permissions:
+```
+fish_add_path /sbin /usr/sbin`
+```
 
-for rust follow this: [here](https://wiki.debian.org/Rust)
+for rust:
+```
+rustup-init
+```
 
 for node on fish, install [fisher](https://github.com/jorgebucaran/fisher) and [nvm.fish](https://github.com/jorgebucaran/nvm.fish?tab=readme-ov-file)
 
