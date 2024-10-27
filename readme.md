@@ -11,8 +11,8 @@ extra packages:
 ```
 sudo dnf install neovim git fish \
 xinput xclip xterm picom picom-conf \
-blueman bluez-tools playerctl
-google-roboto-fonts liberation-fonts
+blueman bluez-tools playerctl \
+google-roboto-fonts liberation-fonts \
 syncthing neofetch \
 vlc transmission-gtk gnome-keyring \
 rustup zoxide calibre
