@@ -3,8 +3,8 @@ general {
     interval = 5
 }
 
-order += "wireless _first_"
 order += "volume master"
+order += "wireless _first_"
 order += "tztime california"
 order += "tztime india"
 
@@ -16,7 +16,7 @@ wireless _first_ {
 volume master {
         format = " vol: %volume "
         format_muted = " vol: muted (%volume) "
-        device = "pulse:1"
+        device = "pipewire"
 }
 
 tztime india {
