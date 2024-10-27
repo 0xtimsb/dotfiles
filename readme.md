@@ -15,7 +15,7 @@ blueman bluez-tools playerctl \
 google-roboto-fonts liberation-fonts \
 syncthing neofetch \
 vlc transmission-gtk gnome-keyring \
-rustup zoxide calibre
+rustup zoxide calibre python3-pip
 ```
 
 nice to have build tool:
