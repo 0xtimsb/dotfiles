@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/a96f9c9e-f269-413b-9eaf-e7c8b47e46bd)
-
 move to stable kernel:
 ```
 sudo dnf list kernel --showduplicates
