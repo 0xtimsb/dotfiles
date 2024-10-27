@@ -1,11 +1,3 @@
-as root:
-```
-usermod -aG sudo tims
-apt update
-apt upgrade
-apt install sudo
-```
-
 packages:
 ```
 sudo apt install i3 xorg git firefox-esr \
