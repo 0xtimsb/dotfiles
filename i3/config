@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 # bg
-exec --no-startup-id feh --bg-scale ~/.config/a.jpg
+exec --no-startup-id feh --bg-fill ~/.config/a.jpg
 
 # border
 default_border pixel 1
@@ -15,7 +15,7 @@ default_floating_border pixel 1
 # gaps
 gaps inner 4
 gaps outer 2
-smart_gaps on
+smart_gaps off
 
 # picom
 exec --no-startup-id picom -b
@@ -35,7 +35,7 @@ exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Natural Scro
 exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed" 0.8
 
 # keyboard
-exec_always --no-startup-id sleep  1; xset r rate 200 30
+exec_always --no-startup-id sleep 1; xset r rate 200 30
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
@@ -45,34 +45,34 @@ bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select | xclip -selection 
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # audio
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set +5% && $refresh_i3status
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && $refresh_i3status
+bindsym XF86MonBrightnessUp exec --no-startup-id  brightnessctl set +5% && $refresh_i3status
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && $refresh_i3status
 
 # media
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # drag
 floating_modifier $mod
 tiling_drag modifier titlebar
 
 # dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # apps
-bindsym $mod+Return exec xterm
-bindsym $mod+q exec firefox
-bindsym $mod+z exec zed
-bindsym $mod+c exec calibre
-bindsym $mod+p exec vlc
-bindsym $mod+g exec github-desktop
+bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+q exec --no-startup-id firefox
+bindsym $mod+z exec --no-startup-id zed
+bindsym $mod+c exec --no-startup-id calibre
+bindsym $mod+p exec --no-startup-id vlc
+bindsym $mod+g exec --no-startup-id github-desktop
 
 # quit
 bindsym $mod+Shift+q kill
@@ -142,10 +142,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym $left resize shrink width 10px
-        bindsym $down resize grow height 10px
-        bindsym $up resize shrink height 10px
-        bindsym $right resize grow width 10px
+        bindsym $left resize shrink width 50px
+        bindsym $down resize grow height 50px
+        bindsym $up resize shrink height 50px
+        bindsym $right resize grow width 50px
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
