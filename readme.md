@@ -3,6 +3,12 @@ move to stable kernel:
 sudo dnf list kernel --showduplicates
 sudo dnf install kernel-xxx
 ```
+
+change hostname (also fixes twice login problem):
+```
+hostnamectl set-hostname --static some-new-hostname
+```
+
 then reboot and choose kernel from grub.
 
 extra packages:
