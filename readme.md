@@ -14,7 +14,7 @@ then reboot and choose kernel from grub.
 extra packages:
 ```
 sudo dnf install neovim git fish \
-xinput xclip xterm picom \
+xinput xclip xterm picom fuse \
 blueman bluez-tools playerctl \
 google-roboto-fonts liberation-fonts \
 syncthing neofetch gnome-keyring-pam \
