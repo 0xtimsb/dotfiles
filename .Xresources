@@ -1,6 +1,6 @@
 Xft.dpi: 170
 
-XTerm*faceName: monospace
+XTerm*faceName: xft:DejaVu Sans Mono
 XTerm*faceSize: 10
 XTerm*selectToClipboard: true
 XTerm*keepClipboard: true 
