@@ -17,7 +17,7 @@ sudo dnf install neovim git fish \
 xinput xclip xterm picom \
 blueman bluez-tools playerctl \
 google-roboto-fonts liberation-fonts \
-syncthing neofetch gnome-keyring-pam \
+syncthing neofetch gnome-keyring-pam \
 vlc transmission-gtk gnome-keyring \
 rustup zoxide calibre python3-pip
 ```
