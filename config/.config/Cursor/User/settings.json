@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "editor.lineNumbers": "relative",
   "vim.useSystemClipboard": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",

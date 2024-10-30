@@ -17,3 +17,6 @@ alias zed-debug='~/projects/zed/target/debug/zed'
 
 # zoxide
 zoxide init fish | source
+
+# gretting
+set -g fish_greeting ""
