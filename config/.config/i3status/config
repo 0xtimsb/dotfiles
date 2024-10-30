@@ -9,7 +9,7 @@ order += "tztime california"
 order += "tztime india"
 
 wireless _first_ {
-    format_up = " %quality at %essid "
+    format_up = " wifi: %quality at %essid "
     format_down = " no internet "
 }
 
@@ -20,11 +20,11 @@ volume master {
 }
 
 tztime india {
-    format = " in: %Y-%m-%d %I:%M %p "
+    format = " in: %a %Y-%m-%d %I:%M %p "
     timezone = "Asia/Kolkata"
 }
 
 tztime california {
-    format = " ca: %Y-%m-%d %I:%M %p "
+    format = " ca: %a %Y-%m-%d %I:%M %p "
     timezone = "America/Los_Angeles"
 }

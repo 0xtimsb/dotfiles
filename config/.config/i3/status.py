@@ -79,3 +79,4 @@ if __name__ == '__main__':
         j.insert(0, status_obj)
 
         print_line(prefix + json.dumps(j))
+

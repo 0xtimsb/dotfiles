@@ -5,17 +5,14 @@ set $down j
 set $up k
 set $right l
 
+set $bg ~/.config/a.png
+
 # bg
-exec --no-startup-id feh --bg-fill ~/.config/a.jpg
+exec --no-startup-id feh --bg-fill $bg
 
 # border
 default_border pixel 1
 default_floating_border pixel 1
-
-# gaps
-gaps inner 4
-gaps outer 2
-smart_gaps off
 
 # picom
 exec --no-startup-id picom -b
@@ -26,9 +23,17 @@ font pango:monospace 10
 # autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# autolock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $bg --nofork
 
+# lock binding 
+bindsym $mod+Shift+w exec --no-startup-id i3lock -i $bg
+
+# network manager
 exec --no-startup-id nm-applet
+
+# bluetooth
+exec --no-startup-id blueman-applet
 
 # mouse
 exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Natural Scrolling Enabled" 1
@@ -75,6 +80,7 @@ bindsym $mod+Return exec --no-startup-id xterm
 bindsym $mod+q exec --no-startup-id firefox
 bindsym $mod+z exec --no-startup-id zed
 bindsym $mod+c exec --no-startup-id calibre
+bindsym $mod+x exec --no-startup-id cursor
 bindsym $mod+p exec --no-startup-id vlc
 bindsym $mod+g exec --no-startup-id github-desktop
 
@@ -161,3 +167,4 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status | ~/.config/i3/status.py
 }
+
