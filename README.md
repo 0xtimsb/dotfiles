@@ -1,34 +1,3 @@
-file structure:
-
-```
-├── config
-│   └── .config
-│       ├── a.jpg
-│       ├── Cursor
-│       │   └── User
-│       │       ├── keybindings.json
-│       │       └── settings.json
-│       ├── fish
-│       │   └── config.fish
-│       ├── i3
-│       │   ├── config
-│       │   └── status.py
-│       ├── i3status
-│       │   └── config
-│       ├── nvim
-│       │   └── init.lua
-│       ├── picom.conf
-│       └── zed
-│           ├── keymap.json
-│           └── settings.json
-├── git
-│   └── .gitconfig
-├── install.sh
-├── README.md
-└── x11
-    └── .Xresources
-```
-
 move to stable kernel:
 
 ```
@@ -60,6 +29,12 @@ nice to have build tool:
 
 ```
 sudo dnf group install "C Development Tools and Libraries"
+```
+
+syncthing:
+```
+systemctl --user enable syncthing.service
+systemctl --user start syncthing.service
 ```
 
 fish as default:
