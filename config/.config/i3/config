@@ -43,7 +43,7 @@ exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed"
 exec_always --no-startup-id sleep 1; xset r rate 200 30
 
 # screenshot
-bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # refresh
@@ -179,6 +179,7 @@ client.unfocused        $bg       $bg       $white  $green    $bg
 client.urgent           $red      $red      $white  $red      $red
 
 bar {
+        position top
         status_command i3status | ~/.config/i3/status.py
         colors {
                 background $bg

@@ -12,7 +12,7 @@ order += "tztime california"
 order += "tztime india"
 
 wireless _first_ {
-    format_up = " wifi: %quality at %essid "
+    format_up = " wifi:%quality "
     format_down = " no internet "
 }
 
