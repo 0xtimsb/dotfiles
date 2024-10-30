@@ -22,5 +22,6 @@
   },
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-  }
+  },
+  "git.enableSmartCommit": true
 }
