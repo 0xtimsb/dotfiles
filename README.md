@@ -1,29 +1,32 @@
 file structure:
 
 ```
-.
-├── .config
-│   ├── a.jpg
-│   ├── Cursor
-│   │   └── User
-│   │       ├── keybindings.json
-│   │       └── settings.json
-│   ├── fish
-│   │   └── config.fish
-│   ├── i3
-│   │   ├── config
-│   │   └── status.py
-│   ├── i3status
-│   │   └── config
-│   ├── nvim
-│   │   └── init.lua
-│   ├── picom.conf
-│   └── zed
-│       ├── keymap.json
-│       └── settings.json
-├── .gitconfig
-├── readme.md
-└── .Xresources
+├── config
+│   └── .config
+│       ├── a.jpg
+│       ├── Cursor
+│       │   └── User
+│       │       ├── keybindings.json
+│       │       └── settings.json
+│       ├── fish
+│       │   └── config.fish
+│       ├── i3
+│       │   ├── config
+│       │   └── status.py
+│       ├── i3status
+│       │   └── config
+│       ├── nvim
+│       │   └── init.lua
+│       ├── picom.conf
+│       └── zed
+│           ├── keymap.json
+│           └── settings.json
+├── git
+│   └── .gitconfig
+├── install.sh
+├── README.md
+└── x11
+    └── .Xresources
 ```
 
 run the install script:
