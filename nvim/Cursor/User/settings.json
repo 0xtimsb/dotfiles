@@ -1,10 +1,22 @@
 {
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "Tokyo Night",
   "editor.lineNumbers": "relative",
   "vim.useSystemClipboard": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "git.confirmSync": false,
+  "git.autofetch": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.replaceTagsWhenPull": true,
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<C-p>": false,
+    "<C-b>": false,
+    "<C-f>": false
+  },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
