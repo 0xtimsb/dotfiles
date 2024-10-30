@@ -1,5 +1,4 @@
 [
-  // git
   {
     "key": "ctrl+g p",
     "command": "git.push"
@@ -47,21 +46,5 @@
   {
     "key": "ctrl+g n",
     "command": "git.branch"
-  },
-  // vim
-  {
-    "key": "ctrl+w",
-    "command": "-extension.vim_ctrl+w",
-    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-extension.vim_ctrl+b",
-    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "-extension.vim_ctrl+f",
-    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
   }
 ]
