@@ -4,9 +4,11 @@
 import sys
 import json
 import subprocess
+import requests
+
+from config import ST_URL, API_KEY, FOLDER_ID
 
 def get_mic_status():
-    """ Get the microphone status (mute status and volume). Returns tuple of (text, color) """
     try:
         mic_status_cmd = "pactl list sources"
         mic_status = subprocess.check_output(mic_status_cmd, shell=True).decode("utf-8")
@@ -46,13 +48,34 @@ def get_mic_status():
     except Exception as e:
         return (f"mic: error ({str(e)})", None)
 
+def get_syncthing_status():
+    try:
+        headers = {'X-API-Key': API_KEY}
+
+        response = requests.get(f"{ST_URL}/db/status?folder={FOLDER_ID}", headers=headers)
+        folder_status = response.json()
+
+        if folder_status["state"] == "syncing":
+            total_bytes = folder_status["globalBytes"]
+            needed_bytes = folder_status["needBytes"]
+            if total_bytes > 0:
+                completion = ((total_bytes - needed_bytes) / total_bytes) * 100
+                return (f" sync with phone: {completion:.1f}% ", "#FFFF00")
+            return (" sync with phone: 0% ", "#FFFF00")
+        else:
+            size_bytes = folder_status["localBytes"]
+            size_mb = size_bytes / (1024**2)
+            return (f" sync with phone: {size_mb:.1f}MB ", None)
+
+    except Exception as e:
+        return (f" sync with phone: error ({str(e)}) ", "#FF0000")
+
 def print_line(message):
     """ Non-buffered printing to stdout. """
     sys.stdout.write(message + '\n')
     sys.stdout.flush()
 
 def read_line():
-    """ Interrupted respecting reader for stdin. """
     try:
         line = sys.stdin.readline().strip()
         if not line:
@@ -71,6 +94,12 @@ if __name__ == '__main__':
             line, prefix = line[1:], ','
 
         j = json.loads(line)
+
+        sync_text, sync_color = get_syncthing_status()
+        sync_obj = {'full_text': sync_text, 'name': 'syncthing_status'}
+        if sync_color:
+            sync_obj['color'] = sync_color
+        j.insert(0, sync_obj)
 
         mic_text, mic_color = get_mic_status()
         status_obj = {'full_text': mic_text, 'name': 'mic_status'}
