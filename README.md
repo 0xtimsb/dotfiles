@@ -29,13 +29,6 @@ file structure:
     └── .Xresources
 ```
 
-run the install script:
-
-```
-cd ~/dotfiles
-./install.sh
-```
-
 move to stable kernel:
 
 ```
@@ -60,7 +53,7 @@ blueman bluez-tools playerctl \
 google-roboto-fonts liberation-fonts \
 syncthing neofetch gnome-keyring-pam \
 vlc transmission-gtk gnome-keyring \
-rustup zoxide calibre python3-pip
+rustup zoxide calibre python3-pip stow
 ```
 
 nice to have build tool:
@@ -104,3 +97,10 @@ for git follow this: [here](https://docs.github.com/en/authentication/connecting
 note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
 
 for screen share test: [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
+
+run the install script:
+
+```
+cd ~/dotfiles
+./install.sh
+```
