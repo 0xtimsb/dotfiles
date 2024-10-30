@@ -30,12 +30,7 @@ require("lazy").setup({
       })
     end
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  }
+  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...}
 }, {
   checker = { enabled = true, notify = false },
 })
@@ -69,5 +64,5 @@ vim.opt.expandtab = true
 vim.cmd('syntax on')
 vim.opt.background = "dark"
 
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd([[colorscheme gruvbox]])
 

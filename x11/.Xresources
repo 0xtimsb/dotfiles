@@ -6,23 +6,21 @@ XTerm*selectToClipboard: true
 XTerm*keepClipboard: true 
 XTerm*scrollBar: false
 
-XTerm*background: #1a1b26
-XTerm*foreground: #c0caf5
-
-XTerm*color0: #15161e
-XTerm*color1: #f7768e
-XTerm*color2: #9ece6a
-XTerm*color3: #e0af68
-XTerm*color4: #7aa2f7
-XTerm*color5: #bb9af7
-XTerm*color6: #7dcfff
-XTerm*color7: #a9b1d6
-
-XTerm*color8: #414868
-XTerm*color9: #f7768e
-XTerm*color10: #9ece6a
-XTerm*color11: #e0af68
-XTerm*color12: #7aa2f7
-XTerm*color13: #bb9af7
-XTerm*color14: #7dcfff
-XTerm*color15: #c0caf5
+XTerm*background: #282828
+XTerm*foreground: #ebdbb2
+XTerm*color0:  #282828
+XTerm*color8:  #928374
+XTerm*color1:  #cc241d
+XTerm*color9:  #fb4934
+XTerm*color2:  #98971a
+XTerm*color10: #b8bb26
+XTerm*color3:  #d79921
+XTerm*color11: #fabd2f
+XTerm*color4:  #458588
+XTerm*color12: #83a598
+XTerm*color5:  #b16286
+XTerm*color13: #d3869b
+XTerm*color6:  #689d6a
+XTerm*color14: #8ec07c
+XTerm*color7:  #a89984
+XTerm*color15: #ebdbb2
