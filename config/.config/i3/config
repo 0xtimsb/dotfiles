@@ -5,10 +5,10 @@ set $down j
 set $up k
 set $right l
 
-set $bg ~/.config/a.png
+set $bgimg ~/.config/a.png
 
 # bg
-exec --no-startup-id feh --bg-fill $bg
+exec --no-startup-id feh --bg-fill $bgimg
 
 # border
 default_border pixel 1
@@ -24,10 +24,10 @@ font pango:monospace 10
 exec --no-startup-id dex --autostart --environment i3
 
 # autolock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $bg --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $bgimg --nofork
 
 # lock binding 
-bindsym $mod+Shift+w exec --no-startup-id i3lock -i $bg
+bindsym $mod+Shift+w exec --no-startup-id i3lock -i $bgimg
 
 # network manager
 exec --no-startup-id nm-applet
@@ -164,7 +164,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $bg #1d2021
+set $bg_light #3c3836
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $white #ebdbb2
+
+#                       border    bg        text    indicator child_border
+client.focused          $blue    $blue     $yellow  $green    $blue
+client.focused_inactive $bg       $bg       $white  $green    $bg   
+client.unfocused        $bg       $bg       $white  $green    $bg
+client.urgent           $red      $red      $white  $red      $red
+
 bar {
         status_command i3status | ~/.config/i3/status.py
-}
+        colors {
+                background $bg
+                statusline $white
+                separator  $yellow
 
+                # workspace colors         border     background  text
+                focused_workspace         $bg_light  $bg_light   $yellow
+                active_workspace         $bg        $bg          $white
+                inactive_workspace       $bg        $bg          $white
+                urgent_workspace         $red       $red        $white
+                binding_mode            $green    $green     $white
+        }
+}

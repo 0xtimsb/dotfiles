@@ -8,6 +8,13 @@ import requests
 
 from config import ST_URL, API_KEY, FOLDER_ID
 
+
+GRUVBOX_RED = "#cc241d"
+GRUVBOX_GREEN = "#98971a"
+GRUVBOX_YELLOW = "#d79921"
+GRUVBOX_BLUE = "#458588"
+GRUVBOX_WHITE = "#ebdbb2"
+
 def get_mic_status():
     try:
         mic_status_cmd = "pactl list sources"
@@ -39,14 +46,14 @@ def get_mic_status():
                     volume_value = volume_str
         
         if mute_status == "yes":
-            return (f"mic: muted ({volume_value}%)", "#FFFF00")
+            return (f"mic: muted ({volume_value}%)", GRUVBOX_YELLOW)
         else:
-            return (f"mic: {volume_value}%", None)
+            return (f"mic: {volume_value}%", GRUVBOX_WHITE)
             
     except subprocess.CalledProcessError:
-        return ("mic: error", None)
+        return ("mic: error", GRUVBOX_RED)
     except Exception as e:
-        return (f"mic: error ({str(e)})", None)
+        return (f"mic: error ({str(e)})", GRUVBOX_RED)
 
 def get_syncthing_status():
     try:
@@ -60,15 +67,15 @@ def get_syncthing_status():
             needed_bytes = folder_status["needBytes"]
             if total_bytes > 0:
                 completion = ((total_bytes - needed_bytes) / total_bytes) * 100
-                return (f" sync with phone: {completion:.1f}% ", "#FFFF00")
-            return (" sync with phone: 0% ", "#FFFF00")
+                return (f" sync with phone: {completion:.1f}% ", GRUVBOX_YELLOW)
+            return (" sync with phone: 0% ", GRUVBOX_YELLOW)
         else:
             size_bytes = folder_status["localBytes"]
             size_mb = size_bytes / (1024**2)
-            return (f" sync with phone: {size_mb:.1f}MB ", None)
+            return (f" sync with phone: {size_mb:.1f}MB ", GRUVBOX_WHITE)
 
     except Exception as e:
-        return (f" sync with phone: error ({str(e)}) ", "#FF0000")
+        return (f" sync with phone: error ({str(e)}) ", GRUVBOX_RED)
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
