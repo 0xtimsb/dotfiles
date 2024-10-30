@@ -26,6 +26,13 @@ file structure:
 └── .Xresources
 ```
 
+run the install script:
+
+```
+cd ~/dotfiles
+./install.sh
+```
+
 move to stable kernel:
 
 ```
