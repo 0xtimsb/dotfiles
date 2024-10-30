@@ -1,10 +1,40 @@
+file structure:
+
+```
+.
+├── .config
+│   ├── a.jpg
+│   ├── Cursor
+│   │   └── User
+│   │       ├── keybindings.json
+│   │       └── settings.json
+│   ├── fish
+│   │   └── config.fish
+│   ├── i3
+│   │   ├── config
+│   │   └── status.py
+│   ├── i3status
+│   │   └── config
+│   ├── nvim
+│   │   └── init.lua
+│   ├── picom.conf
+│   └── zed
+│       ├── keymap.json
+│       └── settings.json
+├── .gitconfig
+├── readme.md
+└── .Xresources
+```
+
 move to stable kernel:
+
 ```
 sudo dnf list kernel --showduplicates
 sudo dnf install kernel-xxx
 ```
 
 change hostname (also fixes twice login problem):
+
 ```
 hostnamectl set-hostname --static some-new-hostname
 ```
@@ -12,6 +42,7 @@ hostnamectl set-hostname --static some-new-hostname
 then reboot and choose kernel from grub.
 
 extra packages:
+
 ```
 sudo dnf install neovim git fish \
 xinput xclip xterm picom fuse \
@@ -23,26 +54,31 @@ rustup zoxide calibre python3-pip
 ```
 
 nice to have build tool:
+
 ```
 sudo dnf group install "C Development Tools and Libraries"
 ```
 
 fish as default:
+
 ```
 chsh -s /usr/bin/fish
 ```
 
 sync:
+
 ```
 xrdb -merge ~/.Xresources
 ```
 
 for network/power permissions:
+
 ```
 fish_add_path /sbin /usr/sbin`
 ```
 
 for rust:
+
 ```
 rustup-init
 ```
