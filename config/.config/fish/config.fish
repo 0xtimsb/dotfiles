@@ -20,3 +20,16 @@ zoxide init fish | source
 
 # gretting
 set -g fish_greeting ""
+
+# git
+alias ga "git add"
+alias gaa "git add --all"
+alias gb "git branch"
+alias gc "git commit -m"
+alias gco "git checkout"
+alias gd "git diff"
+alias gl "git log"
+alias gp "git push"
+alias gpl "git pull"
+alias gs "git status"
+alias gst "git stash"
