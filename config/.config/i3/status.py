@@ -75,7 +75,7 @@ def get_syncthing_status():
             return (f" sync with phone: {size_mb:.1f}MB ", GRUVBOX_WHITE)
 
     except Exception as e:
-        return (f" sync with phone: error ({str(e)}) ", GRUVBOX_RED)
+        return (f" sync with phone: error ", GRUVBOX_RED)
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
