@@ -11,17 +11,19 @@
   "explorer.confirmDelete": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "git.replaceTagsWhenPull": true,
+  "git.enableSmartCommit": true,
+  "editor.tabSize": 2,
   "vim.handleKeys": {
     "<C-w>": false,
     "<C-p>": false,
     "<C-b>": false,
     "<C-f>": false
   },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "git.enableSmartCommit": true
+  }
 }
