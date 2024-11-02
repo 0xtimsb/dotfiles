@@ -17,7 +17,9 @@
     "<C-w>": false,
     "<C-p>": false,
     "<C-b>": false,
-    "<C-f>": false
+    "<C-f>": false,
+    "<C-x>": false,
+    "<C-c>": false
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
   "[rust]": {

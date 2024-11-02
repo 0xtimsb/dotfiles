@@ -15,6 +15,8 @@ GRUVBOX_YELLOW = "#d79921"
 GRUVBOX_BLUE = "#458588"
 GRUVBOX_WHITE = "#ebdbb2"
 
+SECTION_LENGTH_HOURS = 1
+
 def get_mic_status():
     try:
         mic_status_cmd = "pactl list sources"
@@ -28,7 +30,7 @@ def get_mic_status():
                 break
                 
         if not mic_section:
-            return ("mic: not found", None)
+            return (" mic: not found", None)
             
         lines = mic_section.splitlines()
         
@@ -46,14 +48,14 @@ def get_mic_status():
                     volume_value = volume_str
         
         if mute_status == "yes":
-            return (f"mic: muted ({volume_value}%)", GRUVBOX_YELLOW)
+            return (f" mic: muted ({volume_value}%)", GRUVBOX_YELLOW)
         else:
-            return (f"mic: {volume_value}%", GRUVBOX_WHITE)
+            return (f" mic: {volume_value}%", GRUVBOX_WHITE)
             
     except subprocess.CalledProcessError:
-        return ("mic: error", GRUVBOX_RED)
+        return (" mic: error", GRUVBOX_RED)
     except Exception as e:
-        return (f"mic: error ({str(e)})", GRUVBOX_RED)
+        return (f" mic: error ({str(e)})", GRUVBOX_RED)
 
 def get_syncthing_status():
     try:
@@ -76,6 +78,31 @@ def get_syncthing_status():
 
     except Exception as e:
         return (f" sync with phone: error ", GRUVBOX_RED)
+
+
+def get_time_sections():
+    from datetime import datetime 
+
+    now = datetime.now()
+    time_strings = []
+    for hour in range(9, 24, SECTION_LENGTH_HOURS):
+        current_slot = hour % 12
+        current_slot = 12 if current_slot == 0 else current_slot
+        
+        next_hour = (hour + SECTION_LENGTH_HOURS) % 24
+        next_slot = next_hour % 12
+        next_slot = 12 if next_slot == 0 else next_slot
+        
+        time_slot = f" {current_slot}-{next_slot} "
+        
+        if hour <= now.hour < (hour + SECTION_LENGTH_HOURS):
+            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_GREEN})
+        elif hour < now.hour:
+            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_YELLOW})
+        else:   
+            time_strings.append({'full_text': time_slot, 'color': GRUVBOX_WHITE})
+
+    return time_strings
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
@@ -102,6 +129,7 @@ if __name__ == '__main__':
 
         j = json.loads(line)
 
+
         sync_text, sync_color = get_syncthing_status()
         sync_obj = {'full_text': sync_text, 'name': 'syncthing_status'}
         if sync_color:
@@ -113,6 +141,10 @@ if __name__ == '__main__':
         if mic_color:
             status_obj['color'] = mic_color
         j.insert(0, status_obj)
-
+        
+        sections = get_time_sections()
+        for section in reversed(sections):
+            j.insert(0, section)
+    
         print_line(prefix + json.dumps(j))
 

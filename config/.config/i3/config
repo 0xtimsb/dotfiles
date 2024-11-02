@@ -40,7 +40,7 @@ exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Natural Scro
 exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed" 0.8
 
 # keyboard
-exec_always --no-startup-id sleep 1; xset r rate 200 30
+exec_always --no-startup-id sleep 5; xset r rate 200 30
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
@@ -184,7 +184,7 @@ bar {
         colors {
                 background $bg
                 statusline $white
-                separator  $yellow
+                separator  $bg_light
 
                 # workspace colors         border     background  text
                 focused_workspace         $bg_light  $bg_light   $yellow
