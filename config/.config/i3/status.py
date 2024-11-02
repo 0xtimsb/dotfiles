@@ -14,6 +14,7 @@ GRUVBOX_GREEN = "#98971a"
 GRUVBOX_YELLOW = "#d79921"
 GRUVBOX_BLUE = "#458588"
 GRUVBOX_WHITE = "#ebdbb2"
+GRUVBOX_BG_LIGHT = "#3c3836"
 
 SECTION_LENGTH_HOURS = 1
 
@@ -98,7 +99,7 @@ def get_time_sections():
         if hour <= now.hour < (hour + SECTION_LENGTH_HOURS):
             time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_GREEN})
         elif hour < now.hour:
-            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_YELLOW})
+            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_BG_LIGHT})
         else:   
             time_strings.append({'full_text': time_slot, 'color': GRUVBOX_WHITE})
 
