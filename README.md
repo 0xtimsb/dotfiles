@@ -10,7 +10,8 @@ then,
 ```
 // to lock kernel
 sudo dnf install dnf-plugins-extras-versionlock
-sudo dnf versionlock add kernel-6.2.9-300.fc38
+sudo dnf versionlock add kernel-6.8.5-301.fc40
+sudo dnf versionlock add kernel-devel-6.8.5-301.fc40
 
 // check
 sudo dnf versionlock list
