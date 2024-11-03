@@ -1,11 +1,22 @@
 ![image](https://github.com/user-attachments/assets/7adfd00e-dcc8-4c24-be8a-53c17ea022a1)
 
-
 move to stable kernel:
 
 ```
 sudo dnf list kernel --showduplicates
 sudo dnf install kernel-xxx
+```
+then,
+```
+// to lock kernel
+sudo dnf install dnf-plugins-extras-versionlock
+sudo dnf versionlock add kernel-6.2.9-300.fc38
+
+// check
+sudo dnf versionlock list
+
+// to clear
+sudo dnf versionlock clear
 ```
 
 change hostname (also fixes twice login problem):
