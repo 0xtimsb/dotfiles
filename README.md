@@ -11,10 +11,15 @@ then,
 // to lock kernel
 sudo dnf install dnf-plugins-extras-versionlock
 sudo dnf versionlock add kernel-6.8.5-301.fc40
-sudo dnf versionlock add kernel-devel-6.8.5-301.fc40
 
 // check
 sudo dnf versionlock list
+
+// example list
+kernel-0:6.8.5-301.fc40.*
+kernel-core-0:6.8.5-301.fc40.*
+kernel-modules-0:6.8.5-301.fc40.*
+kernel-modules-core-0:6.8.5-301.fc40.*
 
 // to clear
 sudo dnf versionlock clear
