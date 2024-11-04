@@ -76,7 +76,7 @@ tiling_drag modifier titlebar
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # apps
-bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+Return exec --no-startup-id st
 bindsym $mod+q exec --no-startup-id firefox
 bindsym $mod+z exec --no-startup-id zed
 bindsym $mod+c exec --no-startup-id calibre

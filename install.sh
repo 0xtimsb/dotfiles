@@ -4,6 +4,7 @@ packages=(
     git
     config
     x11
+    terminal
 )
 
 for package in "${packages[@]}"; do

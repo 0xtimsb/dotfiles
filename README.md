@@ -6,7 +6,9 @@ move to stable kernel:
 sudo dnf list kernel --showduplicates
 sudo dnf install kernel-xxx
 ```
+
 then,
+
 ```
 // to lock kernel
 sudo dnf install dnf-plugins-extras-versionlock
@@ -37,7 +39,7 @@ extra packages:
 
 ```
 sudo dnf install neovim git fish \
-xinput xclip xterm picom fuse \
+xinput xclip st picom fuse \
 blueman bluez-tools playerctl \
 google-roboto-fonts liberation-fonts \
 syncthing neofetch gnome-keyring-pam \
@@ -52,6 +54,7 @@ sudo dnf group install "C Development Tools and Libraries"
 ```
 
 syncthing:
+
 ```
 systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
@@ -93,9 +96,23 @@ note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
 
 for screen share test: [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
 
+for st:
+
+```
+git clone https://git.suckless.org/st
+```
+
 run the install script:
 
 ```
 cd ~/dotfiles
 ./install.sh
+```
+
+after:
+
+```
+sudo dnf install libX11-devel libXft-devel
+sudo make clean install
+sudo mv st /usr/local/
 ```
