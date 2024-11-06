@@ -33,3 +33,6 @@ alias gp "git push"
 alias gpl "git pull"
 alias gs "git status"
 alias gst "git stash"
+
+# cp
+alias cp "rsync -ah --info=progress2"

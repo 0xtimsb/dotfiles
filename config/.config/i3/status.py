@@ -80,31 +80,6 @@ def get_syncthing_status():
     except Exception as e:
         return (f" sync with phone: error ", GRUVBOX_RED)
 
-
-def get_time_sections():
-    from datetime import datetime 
-
-    now = datetime.now()
-    time_strings = []
-    for hour in range(9, 24, SECTION_LENGTH_HOURS):
-        current_slot = hour % 12
-        current_slot = 12 if current_slot == 0 else current_slot
-        
-        next_hour = (hour + SECTION_LENGTH_HOURS) % 24
-        next_slot = next_hour % 12
-        next_slot = 12 if next_slot == 0 else next_slot
-        
-        time_slot = f" {current_slot}-{next_slot} "
-        
-        if hour <= now.hour < (hour + SECTION_LENGTH_HOURS):
-            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_GREEN})
-        elif hour < now.hour:
-            time_strings.append({'full_text': f"{time_slot}", 'color': GRUVBOX_BG_LIGHT})
-        else:   
-            time_strings.append({'full_text': time_slot, 'color': GRUVBOX_WHITE})
-
-    return time_strings
-
 def print_line(message):
     """ Non-buffered printing to stdout. """
     sys.stdout.write(message + '\n')
@@ -142,10 +117,6 @@ if __name__ == '__main__':
         if mic_color:
             status_obj['color'] = mic_color
         j.insert(0, status_obj)
-        
-        sections = get_time_sections()
-        for section in reversed(sections):
-            j.insert(0, section)
-    
+         
         print_line(prefix + json.dumps(j))
 

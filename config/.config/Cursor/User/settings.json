@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Light Hard",
   "editor.lineNumbers": "relative",
   "vim.useSystemClipboard": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -37,5 +37,6 @@
       "before": ["k"],
       "after": ["g", "k"]
     }
-  ]
+  ],
+  "cursor.cpp.disabledLanguages": []
 }
