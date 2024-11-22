@@ -44,5 +44,6 @@
   "dart.flutterSdkPath": "/home/tims/apps/flutter",
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "Gruvbox Light Hard"
+  "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
+  "explorer.confirmPasteNative": false
 }
