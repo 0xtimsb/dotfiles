@@ -9,7 +9,9 @@ general {
 order += "volume master"
 order += "wireless _first_"
 order += "tztime california"
+order += "tztime indiana"
 order += "tztime india"
+
 
 wireless _first_ {
     format_up = " wifi:%quality "
@@ -25,6 +27,11 @@ volume master {
 tztime india {
     format = " in: %a %Y-%m-%d %I:%M %p "
     timezone = "Asia/Kolkata"
+}
+
+tztime indiana {
+    format = " indiana: %a %Y-%m-%d %I:%M %p "
+    timezone = "America/Indiana/Indianapolis"
 }
 
 tztime california {

@@ -11,14 +11,17 @@ set $bgimg ~/.config/a.png
 exec --no-startup-id feh --bg-fill $bgimg
 
 # border
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 # picom
 exec --no-startup-id picom -b
 
 # font
 font pango:monospace 10
+
+# theme toggle
+bindsym $mod+Shift+t exec ~/.config/i3/toggle-theme.sh
 
 # autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -36,15 +39,19 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # mouse
-exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed" 0.8
+exec --no-startup-id xinput set-prop "pointer:2.4G Mouse" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "pointer:2.4G Mouse" "libinput Accel Speed" 0.8
 
 # keyboard
-exec_always --no-startup-id sleep 5; xset r rate 200 30
+exec_always --no-startup-id sleep 2; xset r rate 200 30
 
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# record
+bindsym $mod+Ctrl+Shift+r exec --no-startup-id ~/.config/i3/record_video.sh
+bindsym $mod+Shift+e exec --no-startup-id pkill -INT ffmpeg
 
 # refresh
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -82,7 +89,7 @@ bindsym $mod+z exec --no-startup-id zed
 bindsym $mod+c exec --no-startup-id calibre
 bindsym $mod+x exec --no-startup-id cursor
 bindsym $mod+p exec --no-startup-id vlc
-bindsym $mod+g exec --no-startup-id github-desktop
+bindsym $mod+g exec --no-startup-id studio
 
 # quit
 bindsym $mod+Shift+q kill
@@ -149,7 +156,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
         bindsym $left resize shrink width 50px

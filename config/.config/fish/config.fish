@@ -13,7 +13,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # zed
-alias zed-debug='~/projects/zed/target/debug/zed'
+alias zed-debug='~/zed/target/debug/zed'
 
 # zoxide
 zoxide init fish | source
@@ -36,3 +36,14 @@ alias gst "git stash"
 
 # cp
 alias cp "rsync -ah --info=progress2"
+
+# sync
+alias watch 'watch "grep -e Dirty: -e Writeback: /proc/meminfo"'
+
+# java
+set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk-17.0.13.0.11-1.fc40.x86_64
+set -x PATH $JAVA_HOME/bin $PATH 
+
+# android
+set -x ANDROID_SDK_ROOT /home/$USER/Android/Sdk
+set -x PATH $PATH $ANDROID_SDK_ROOT/platform-tools
