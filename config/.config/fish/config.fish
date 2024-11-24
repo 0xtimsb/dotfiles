@@ -13,7 +13,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # zed
-alias zed-debug='~/zed/target/debug/zed'
+alias zed-debug='~/zed/target/debug/cli'
 
 # zoxide
 zoxide init fish | source
