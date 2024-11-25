@@ -1,6 +1,6 @@
 ```
 sudo apt install neovim git fish \
-fuse syncthing \
+fuse syncthing alacritty \
 vlc transmission-gtk \
 rustup zoxide calibre stow build-essential
 ```
