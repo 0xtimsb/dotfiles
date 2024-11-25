@@ -10,7 +10,7 @@ preload-engines=['xkb:us::eng']
 version='1.5.29'
 
 [org/gnome/control-center]
-last-panel='system'
+last-panel='multitasking'
 window-state=(980, 902, false)
 
 [org/gnome/deja-dup]
@@ -62,6 +62,15 @@ enable-animations=false
 gtk-theme='Yaru-dark'
 icon-theme='Yaru'
 overlay-scrolling=true
+
+[org/gnome/desktop/notifications]
+application-children=['gnome-power-panel', 'dev-zed-zed']
+
+[org/gnome/desktop/notifications/application/dev-zed-zed]
+application-id='dev.zed.Zed.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
 
 [org/gnome/desktop/peripherals/mouse]
 natural-scroll=true
@@ -134,10 +143,14 @@ switch-windows-backward=@as []
 toggle-fullscreen=['<Super>f']
 toggle-maximized=@as []
 
+[org/gnome/desktop/wm/preferences]
+num-workspaces=4
+
 [org/gnome/evolution-data-server]
 migrated=true
 
 [org/gnome/mutter]
+dynamic-workspaces=false
 edge-tiling=false
 experimental-features=['scale-monitor-framebuffer']
 
@@ -161,6 +174,7 @@ initial-size=(1196, 1147)
 
 [org/gnome/settings-daemon/plugins/media-keys]
 control-center=['<Super>comma']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
 help=@as []
 logout=['<Shift><Super>e']
 mic-mute=['<Super>AudioMute']
@@ -177,11 +191,32 @@ volume-mute=['AudioMute']
 volume-up=['AudioRaiseVolume']
 www=['<Super>q']
 
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>c'
+command='code --ozone-platform=wayland'
+name='Code'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>z'
+command='zed'
+name='Zed'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>e'
+command='nautilus'
+name='File Explorer'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>t'
+command='transmission-gtk'
+name='Transmission'
+
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=900
 sleep-inactive-ac-type='suspend'
 
 [org/gnome/shell]
+command-history=['r']
 enabled-extensions=['ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'forge@jmmaranan.com']
 favorite-apps=@as []
 last-selected-power-profile='performance'
@@ -275,6 +310,9 @@ toggle-quick-settings=['<Super>s']
 
 [org/gnome/shell/world-clocks]
 locations=@av []
+
+[org/gnome/software]
+check-timestamp=int64 1732525321
 
 [org/gtk/gtk4/settings/file-chooser]
 show-hidden=false

@@ -14,9 +14,6 @@ zoxide init fish | source
 # gretting
 set -g fish_greeting ""
 
-# cp
-alias cp "rsync -ah --info=progress2"
-
 # sync
 alias watch 'watch "grep -e Dirty: -e Writeback: /proc/meminfo"'
 
