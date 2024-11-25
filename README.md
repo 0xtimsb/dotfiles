@@ -2,7 +2,8 @@
 sudo apt install neovim git \
 fuse syncthing alacritty \
 vlc transmission-gtk curl \
-zoxide calibre stow build-essential
+zoxide calibre stow build-essential \
+gnome-browser-connector
 ```
 
 for rust, [here](https://rustup.rs/)
