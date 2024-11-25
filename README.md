@@ -1,5 +1,5 @@
 ```
-sudo apt install neovim git fish \
+sudo apt install neovim git \
 fuse syncthing alacritty \
 vlc transmission-gtk \
 rustup zoxide calibre stow build-essential
@@ -12,12 +12,6 @@ systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 ```
 
-fish as default:
-
-```
-chsh -s /usr/bin/fish
-```
-
 sync:
 
 ```
@@ -28,6 +22,14 @@ for rust:
 
 ```
 rustup-init
+```
+
+for fish, [here](https://github.com/fish-shell/fish-shell)
+
+fish as default:
+
+```
+chsh -s /usr/bin/fish
 ```
 
 for node on fish, install [fisher](https://github.com/jorgebucaran/fisher) and [nvm.fish](https://github.com/jorgebucaran/nvm.fish?tab=readme-ov-file)
