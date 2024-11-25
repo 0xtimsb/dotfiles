@@ -2,27 +2,10 @@
 sudo apt install neovim git \
 fuse syncthing alacritty \
 vlc transmission-gtk \
-rustup zoxide calibre stow build-essential
+zoxide calibre stow build-essential
 ```
 
-syncthing:
-
-```
-systemctl --user enable syncthing.service
-systemctl --user start syncthing.service
-```
-
-sync:
-
-```
-xrdb -merge ~/.Xresources
-```
-
-for rust:
-
-```
-rustup-init
-```
+for rust, [here](https://rustup.rs/)
 
 for fish, [here](https://github.com/fish-shell/fish-shell)
 
