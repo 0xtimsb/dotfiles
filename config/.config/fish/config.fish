@@ -20,6 +20,9 @@ alias cp "rsync -ah --info=progress2"
 # sync
 alias watch 'watch "grep -e Dirty: -e Writeback: /proc/meminfo"'
 
+# code
+alias code "code --ozone-platform=wayland"
+
 # java
 #set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk-17.0.13.0.11-1.fc40.x86_64
 #set -x PATH $JAVA_HOME/bin $PATH 
