@@ -1,56 +1,8 @@
-![image](https://github.com/user-attachments/assets/7adfd00e-dcc8-4c24-be8a-53c17ea022a1)
-
-move to stable kernel:
-
 ```
-sudo dnf list kernel --showduplicates
-sudo dnf install kernel-xxx
-```
-
-then,
-
-```
-// to lock kernel
-sudo dnf install dnf-plugins-extras-versionlock
-sudo dnf versionlock add kernel-6.8.5-301.fc40
-
-// check
-sudo dnf versionlock list
-
-// example list
-kernel-0:6.8.5-301.fc40.*
-kernel-core-0:6.8.5-301.fc40.*
-kernel-modules-0:6.8.5-301.fc40.*
-kernel-modules-core-0:6.8.5-301.fc40.*
-
-// to clear
-sudo dnf versionlock clear
-```
-
-change hostname (also fixes twice login problem):
-
-```
-hostnamectl set-hostname --static some-new-hostname
-```
-
-then reboot and choose kernel from grub.
-
-extra packages:
-
-```
-sudo dnf install neovim git fish \
-xinput xclip st picom fuse \
-blueman bluez-tools playerctl \
-google-roboto-fonts liberation-fonts \
-syncthing neofetch gnome-keyring-pam \
-vlc transmission-gtk gnome-keyring \
-rustup zoxide calibre python3-pip stow
-```
-
-nice to have build tool:
-
-```
-sudo dnf group install "C Development Tools and Libraries"
+sudo apt install neovim git fish \
+fuse syncthing \
+vlc transmission-gtk \
+rustup zoxide calibre stow build-essential
 ```
 
 syncthing:
@@ -72,12 +24,6 @@ sync:
 xrdb -merge ~/.Xresources
 ```
 
-for network/power permissions:
-
-```
-fish_add_path /sbin /usr/sbin`
-```
-
 for rust:
 
 ```
@@ -94,25 +40,9 @@ for git follow this: [here](https://docs.github.com/en/authentication/connecting
 
 note use this for fish (c instead of s): `eval "$(ssh-agent -c)"`
 
-for screen share test: [here](https://mozilla.github.io/webrtc-landing/gum_test.html)
-
-for st:
-
-```
-git clone https://git.suckless.org/st
-```
-
 run the install script:
 
 ```
 cd ~/dotfiles
 ./install.sh
-```
-
-after:
-
-```
-sudo dnf install libX11-devel libXft-devel
-sudo make clean install
-sudo mv st /usr/local/
 ```
