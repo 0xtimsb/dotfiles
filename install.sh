@@ -3,7 +3,6 @@
 packages=(
     git
     config
-    x11
 )
 
 for package in "${packages[@]}"; do
