@@ -20,30 +20,13 @@
     "<C-x>": false,
     "<C-c>": false
   },
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["j"],
-      "after": ["g", "j"]
-    },
-    {
-      "before": ["k"],
-      "after": ["g", "k"]
-    }
-  ],
   "terminal.integrated.scrollback": 2000,
-  "[kotlin]": {
-    "editor.defaultFormatter": "fwcd.kotlin"
-  },
-  "dart.flutterSdkPath": "/home/tims/apps/flutter",
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "window.autoDetectColorScheme": true,
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "explorer.confirmPasteNative": false
+  "explorer.confirmPasteNative": false,
+  "window.titleBarStyle": "custom"
 }
