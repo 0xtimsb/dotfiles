@@ -1,7 +1,7 @@
 ```
 sudo apt install neovim git \
 fuse syncthing alacritty \
-vlc transmission-gtk \
+vlc transmission-gtk curl \
 zoxide calibre stow build-essential
 ```
 
