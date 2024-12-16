@@ -5,20 +5,14 @@ alias vim "nvim"
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# zed
-alias zed-debug='~/zed/target/debug/cli'
-
 # zoxide
 zoxide init fish | source
 
 # gretting
 set -g fish_greeting ""
 
-# sync
-alias watch 'watch "grep -e Dirty: -e Writeback: /proc/meminfo"'
-
 # code
-alias code "~/apps/cursor.AppImage --no-sandbox --ozone-platform=wayland"
+alias code "~/apps/cursor.AppImage --no-sandbox"
 alias cursor "code"
 
 # java
