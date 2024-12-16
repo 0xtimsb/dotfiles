@@ -18,7 +18,8 @@
     "<C-b>": false,
     "<C-f>": false,
     "<C-x>": false,
-    "<C-c>": false
+    "<C-c>": false,
+    "<C-i>": false
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"

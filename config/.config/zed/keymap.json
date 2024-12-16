@@ -2,6 +2,7 @@
   {
     "context": "Editor && !menu",
     "bindings": {
+      "ctrl-v": "vim::Paste",
       "ctrl-c": "editor::Copy",
       "ctrl-x": "editor::Cut",
       "ctrl-y": "editor::Undo",

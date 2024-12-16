@@ -48,13 +48,7 @@
     "command": "git.branch"
   },
   {
-    "key": "ctrl+alt+n",
-    "command": "bookmarks.jumpToNext",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+l",
-    "command": "-bookmarks.jumpToNext",
-    "when": "editorTextFocus"
+    "key": "ctrl+g o",
+    "command": "git.openFile"
   }
 ]
