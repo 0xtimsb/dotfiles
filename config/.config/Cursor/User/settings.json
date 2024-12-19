@@ -30,5 +30,6 @@
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "explorer.confirmPasteNative": false,
   "window.titleBarStyle": "custom",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "window.commandCenter": 1
 }

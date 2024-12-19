@@ -12,8 +12,7 @@ zoxide init fish | source
 set -g fish_greeting ""
 
 # code
-alias code "~/apps/cursor.AppImage --no-sandbox"
-alias cursor "code"
+alias cursor "~/apps/cursor.AppImage --no-sandbox"
 
 # java
 #set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk-17.0.13.0.11-1.fc40.x86_64

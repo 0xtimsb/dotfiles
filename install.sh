@@ -1,11 +1,8 @@
 #!/bin/bash
 
-packages=(
-    git
-    config
-)
+mkdir -p "$HOME/.config/nvim"
+mkdir -p "$HOME/.config/zed"
+mkdir -p "$HOME/.config/Cursor/User"
+mkdir -p "$HOME/.config/fish"
 
-for package in "${packages[@]}"; do
-    echo "stowing $package"
-    stow -R "$package"
-done
+stow -R -t "$HOME" config git
