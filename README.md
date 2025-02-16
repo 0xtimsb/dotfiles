@@ -1,4 +1,0 @@
-```
-cd ~/dotfiles
-./install.sh
-```
